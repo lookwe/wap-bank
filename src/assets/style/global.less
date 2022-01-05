@@ -1,0 +1,198 @@
+// 覆盖样式
+.ant-menu-inline {
+    border-right: 0;
+}
+.ant-layout-header {
+    padding: 0 16px;
+}
+.ant-layout-content {
+    height: calc(100vh - 78px);
+}
+.ant-layout-content {
+    overflow-y: auto;
+}
+.ant-tabs-nav .ant-tabs-tab {
+    padding: 12px 0;
+}
+.ant-tabs-nav .ant-tabs-tab {
+    margin-right: 60px;
+}
+.ant-tabs-nav .ant-tabs-tab-active {
+    font-size: 18px;
+    font-weight: bold;
+}
+// 字体大小 fz-10 fz-24
+.loopFont(@i) when (@i<=24) {
+    .fz-@{i} {
+        font-size: ~'@{i}px';
+    }
+    .loopFont(@i+1);
+}
+.loopFont(10);
+// 粗体
+.fw-b {
+    font-weight: 600;
+}
+// 间距，输出 ml16,pt32等....
+@typeList1: m, p;
+@typeList2: margin, padding;
+@dirList1: t, r, b, l, v, h;
+@dirList2: top, right, bottom, left, v, h;
+@typeLen: length(@typeList1);
+@dirLen: length(@dirList1);
+.genSpacing(@type1,@type2,@i,@value) when(@i = 5) {
+    @dir1: extract(@dirList1, @i);
+    .@{type1}@{dir1}@{value} {
+        @{type2}-top: ~'@{value}px';
+        @{type2}-bottom: ~'@{value}px';
+    }
+}
+.genSpacing(@type1,@type2,@i,@value) when(@i = 6) {
+    @dir1: extract(@dirList1, @i);
+    .@{type1}@{dir1}@{value} {
+        @{type2}-left: ~'@{value}px';
+        @{type2}-right: ~'@{value}px';
+    }
+}
+.genSpacing(@type1,@type2,@i,@value) when(@i < 5) {
+    @dir1: extract(@dirList1, @i);
+    @dir2: extract(@dirList2, @i);
+    .@{type1}@{dir1}@{value} {
+        @{type2}-@{dir2}: ~'@{value}px';
+    }
+}
+.loopDir(@i,@type1,@type2,@value) when (@i <= @dirLen) {
+    .genSpacing(@type1, @type2, @i, @value);
+    .loopDir(@i+1, @type1, @type2, @value);
+}
+.loopType(@i,@value) when (@i <= @typeLen) {
+    @type1: extract(@typeList1, @i);
+    @type2: extract(@typeList2, @i);
+    .loopDir(1, @type1, @type2, @value);
+    .loopType(@i+1, @value);
+    .@{type1}@{value} {
+        @{type2}: ~'@{value}px';
+    }
+}
+.loop(@i,@gap,@total) when (@i <= @total) {
+    .loopType(1, @i);
+    .loop(@i + @gap, @gap, @total);
+}
+.loop(0, 5, 80);
+
+// 颜色
+.c-p {
+    color: @primary-color;
+}
+.c-b {
+    color: @text-color;
+}
+.c-s {
+    color: @text-color-secondary;
+}
+.c-r {
+    color: red;
+}
+.c-w {
+    color: #fff;
+}
+.bg-p {
+    background: @primary-color;
+}
+.bg-w {
+    background: #fff;
+}
+// 布局
+.flex {
+    display: flex;
+}
+.flex1 {
+    flex: 1;
+}
+.ac {
+    align-items: center;
+}
+.c {
+    align-items: center;
+    justify-content: center;
+}
+.as {
+    align-items: flex-start;
+}
+.ae {
+    align-items: flex-end;
+}
+.jc {
+    justify-content: center;
+}
+.jsb {
+    justify-content: space-between;
+}
+.js {
+    justify-content: flex-start;
+}
+.je {
+    justify-content: flex-end;
+}
+.f-d-c {
+    flex-direction: column;
+}
+.f-w {
+    flex-wrap: wrap;
+}
+
+.tr {
+    text-align: right;
+}
+.tc {
+    text-align: center;
+}
+.w100 {
+    width: 100%;
+}
+.h100 {
+    height: 100%;
+}
+//分隔线
+.border {
+    border: 1px solid #eee;
+}
+.b-b {
+    border-bottom: 1px solid #eee;
+}
+.b-t {
+    border-top: 1px solid #eee;
+}
+.b-l {
+    border-left: 1px solid #eee;
+}
+.b-r {
+    border-right: 1px solid #eee;
+}
+// 其他
+.cursor-p {
+    cursor: pointer;
+}
+.cursor-d {
+    cursor: default;
+}
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.page-con {
+    padding: 24px;
+}
+.page-title {
+    font-size: 18px;
+    color: @primary-color;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.page-query {
+    .ant-form-item {
+        margin-right: 38px;
+        margin-bottom: 10px;
+    }
+}
