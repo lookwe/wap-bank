@@ -2,12 +2,15 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from '@/router'
 import store from '@/store'
-import '@/assets/style/global.less'
+import '@/assets/style/index.less'
+import '@/components'
+
+// 工具类
 import instructions from '@/utils/instructions'
 import filters from '@/utils/filters'
 import utils from '@/utils'
-import '@/components'
 
+// 网络请求器
 Object.keys(utils).forEach((k) => {
     Vue.prototype[`$${k}`] = utils[k]
 })
