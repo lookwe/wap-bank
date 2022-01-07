@@ -29,6 +29,25 @@
     .loopFont(@i+1);
 }
 .loopFont(10);
+
+// 多行超出...显示 [u-line-1 ~ u-line-6]
+.u-line-1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.Loop(@index) when(@index <= 6){
+    .u-line-@{index} {
+        display: -webkit-box!important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        -webkit-line-clamp: @index;
+        -webkit-box-orient: vertical!important;
+    }
+}
+.Loop(2);
+
 // 粗体
 .fw-b {
     font-weight: 600;
@@ -102,6 +121,22 @@
 .bg-w {
     background: #fff;
 }
+
+.round-dot-red {
+    position: relative;
+    &::before {
+        content: " ";
+        width: 8px;
+        height: 8px;
+        background: red;
+        border-radius: 4px;
+        position: absolute;
+        top: 50%;
+        left: -15px;
+        transform: translateY(-50%);
+    }
+}
+
 // 布局
 .flex {
     display: flex;
@@ -169,30 +204,6 @@
 .b-r {
     border-right: 1px solid #eee;
 }
-// 其他
-.cursor-p {
-    cursor: pointer;
-}
-.cursor-d {
-    cursor: default;
-}
-.ellipsis {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.page-con {
-    padding: 24px;
-}
-.page-title {
-    font-size: 18px;
-    color: @primary-color;
-    font-weight: 600;
-    margin-bottom: 16px;
-}
-.page-query {
-    .ant-form-item {
-        margin-right: 38px;
-        margin-bottom: 10px;
-    }
-}
+
+
+
