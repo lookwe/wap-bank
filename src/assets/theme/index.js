@@ -9,4 +9,6 @@ module.exports = {
     'tabbar-item-active-color': '@primary-color', //标签栏颜色
     'button-small-height': '29px', // small按钮高度
     'button-round-border-radius': '29px' // 圆角按钮radius大小
+
+
 }

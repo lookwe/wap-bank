@@ -978,9 +978,9 @@
   integrity sha1-K1o6s/kYzKSKjHVMCBaOPwPrphs=
 
 "@popperjs/core@^2.9.2":
-  version "2.11.0"
-  resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.0.tgz#6734f8ebc106a0860dff7f92bf90df193f0935d7"
-  integrity sha512-zrsUxjLOKAzdewIDRWy9nsV1GQsKBCWaGwsZQlCgr6/q+vjyZhFgqedLfFBuI9anTPEUT4APq9Mu0SZBTzIcGQ==
+  version "2.11.2"
+  resolved "https://registry.npmmirror.com/@popperjs/core/download/@popperjs/core-2.11.2.tgz#830beaec4b4091a9e9398ac50f865ddea52186b9"
+  integrity sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA==
 
 "@soda/friendly-errors-webpack-plugin@^1.7.1":
   version "1.8.1"
@@ -1158,13 +1158,13 @@
 
 "@vant/icons@^1.7.1":
   version "1.7.3"
-  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.7.3.tgz#e51b46065cfde445617401ebe309a33b62a29725"
+  resolved "https://registry.npmmirror.com/@vant/icons/download/@vant/icons-1.7.3.tgz#e51b46065cfde445617401ebe309a33b62a29725"
   integrity sha512-tW4EqzxN4kXw1rnlnQJQHofEifPbt/gECOWiibomht8QLyvoGuE4iUmDFS288dJ07ZjuTy0bhdABj0SENo2fmQ==
 
 "@vant/popperjs@^1.1.0":
   version "1.1.0"
-  resolved "https://registry.npmjs.org/@vant/popperjs/-/popperjs-1.1.0.tgz#b4edee5bbfa6fb18705986e313d4fd5f17942a0f"
-  integrity sha512-8MD1gz146awV/uPxYjz4pet22f7a9YVKqk7T+gFkWFwT9mEcrIUEg/xPrdOnWKLP9puXyYtm7oVfSDSefZ/p/w==
+  resolved "https://registry.npm.taobao.org/@vant/popperjs/download/@vant/popperjs-1.1.0.tgz?cache=0&sync_timestamp=1617712371368&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fpopperjs%2Fdownload%2F%40vant%2Fpopperjs-1.1.0.tgz#b4edee5bbfa6fb18705986e313d4fd5f17942a0f"
+  integrity sha1-tO3uW7+m+xhwWYbjE9T9XxeUKg8=
   dependencies:
     "@popperjs/core" "^2.9.2"
 
@@ -8202,7 +8202,7 @@ validate-npm-package-license@^3.0.1:
 
 vant@^2.12.37:
   version "2.12.37"
-  resolved "https://registry.npmjs.org/vant/-/vant-2.12.37.tgz#eeeb7110170cd34fef047b05837e45f8bc53ceba"
+  resolved "https://registry.npmmirror.com/vant/download/vant-2.12.37.tgz#eeeb7110170cd34fef047b05837e45f8bc53ceba"
   integrity sha512-kPdvLfqd4Yhc8asQZGvUODezZX0TJwlDUyNQ2MCIEEL4UtKMHFOzubLNNfU+3n96mpL1AFnGfTxxeeeaM9RM5g==
   dependencies:
     "@babel/runtime" "7.x"
@@ -8255,7 +8255,7 @@ vue-hot-reload-api@^2.3.0:
 
 vue-lazyload@1.2.3:
   version "1.2.3"
-  resolved "https://registry.npmjs.org/vue-lazyload/-/vue-lazyload-1.2.3.tgz#901f9ec15c7e6ca78781a2bae4a343686bdedb2c"
+  resolved "https://registry.npmmirror.com/vue-lazyload/download/vue-lazyload-1.2.3.tgz#901f9ec15c7e6ca78781a2bae4a343686bdedb2c"
   integrity sha512-DC0ZwxanbRhx79tlA3zY5OYJkH8FYp3WBAnAJbrcuoS8eye1P73rcgAZhyxFSPUluJUTelMB+i/+VkNU/qVm7g==
 
 "vue-loader-v16@npm:vue-loader@^16.1.0":

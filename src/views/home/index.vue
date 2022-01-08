@@ -3,7 +3,10 @@
         <!-- 头部轮播图 -->
         <div class="header-banner-swipe">
             <van-swipe :autoplay="3000">
-                <van-swipe-item v-for="(image, index) in images" :key="index">
+                <van-swipe-item
+                    v-for="(image, index) in swipeImageList"
+                    :key="index"
+                >
                     <img v-lazy="image" class="image" />
                 </van-swipe-item>
             </van-swipe>
@@ -33,16 +36,22 @@
                 </div>
                 <div class="right-box">
                     <div class="flex as">
-                        <van-icon name="location-o" />
-                        <span class="span-city">广东 |</span>
-                        <van-icon name="apps-o" />
+                        <div class="flex as" @click="$refs.comIndexAnchor.show()">
+                            <van-icon name="location-o" />
+                            <span class="span-city">广东 |</span>
+                        </div>
+                        <van-icon name="apps-o" @click="handlerFilter" />
                     </div>
                 </div>
             </div>
 
             <!-- 商贷列表 -->
             <div class="mod-main__loan">
-                <div class="loan-item">
+                <div
+                    class="loan-item mb20"
+                    v-for="(item, index) in loanList"
+                    :key="index"
+                >
                     <div class="loan-item__upper flex jsb">
                         <div class="flex">
                             <van-image
@@ -51,58 +60,81 @@
                                 height="18px"
                                 src="https://img01.yzcdn.cn/vant/cat.jpeg"
                             />
-                            <div class="ml10">
+                            <div class="ml10 u-line-1">
                                 <div class="fz-17 txt-main-color mb5">
                                     招商银行富税贷
                                 </div>
                                 <div class="txt-tips">申请最多</div>
                             </div>
                         </div>
-                        <div style="height: 30px">
-                            <van-button round type="primary" size="small"
-                                >立即申请</van-button
-                            >
+
+                        <van-button round type="primary" size="small"
+                            >立即申请</van-button
+                        >
+                    </div>
+
+                    <div class="loan-item__lower u-box">
+                        <div class="flex jsb">
+                            <div class="flex f-d-c box-piece">
+                                <div class="c-p">
+                                    <span class="fz-26 fw-b">200</span>
+                                    <span class="fz-12">万</span>
+                                </div>
+                                <div class="fz-12 txt-tips-color">
+                                    额度最高可达
+                                </div>
+                            </div>
+
+                            <div class="flex f-d-c box-piece">
+                                <div class="fz-14 pt10">等额本息</div>
+                                <div class="fz-12 txt-tips-color">
+                                    年利率<span class="c-p">15%</span>起
+                                </div>
+                            </div>
+
+                            <div class="flex f-d-c box-piece">
+                                <div class="fz-14 pt10">税金贷</div>
+                                <div class="fz-12 txt-tips-color">
+                                    授信期限3个月起
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="loan-item__lower">
-                        <div class="flex jsb mb10">
-                            <div>
-                                <div class="c-r mb5">
-                                    <span class="fz-22 fw-b">20</span>
-                                    <span class="fz-12">万</span>
-                                </div>
-                                <div class="fz-12">额度最高可达</div>
-                            </div>
-                            <div>
-                                <div class="mb5 fz-14">等额本息</div>
-                                <div class="fz-12">年利率15%起</div>
-                            </div>
-                            <div>
-                                <div class="mb5 fz-14">税金贷</div>
-                                <div class="fz-12">授信期限3个月起</div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="loan-item__divider mt20"></div>
                 </div>
             </div>
         </div>
+
+        <listFilter ref="listFilter" />
+        <com-index-anchor ref="comIndexAnchor" @confirm="onAnchorCallback" />
     </div>
 </template>
 
 <script>
+import listFilter from "@/views/home/components/list-filter";
 export default {
+    components: {
+        listFilter,
+    },
     data() {
         return {
-            images: [
+            swipeImageList: [
                 "https://img01.yzcdn.cn/vant/apple-1.jpg",
                 "https://img01.yzcdn.cn/vant/apple-2.jpg",
             ],
+
+            loanList: [{}, {}, {}, {}, {}, {}],
         };
     },
     methods: {
-        push() {
-            this.$router.push("product");
+        handlerFilter() {
+            this.$refs.listFilter.show();
+        },
+
+        //
+        onAnchorCallback(item) {
+            console.log(item);
         },
     },
 };
@@ -118,6 +150,7 @@ export default {
     }
 
     .mod-main {
+        margin-bottom: 30px;
         &__consulting {
             height: 56px;
             border-radius: 5px;
@@ -170,12 +203,17 @@ export default {
         }
 
         &__loan {
-            background: chartreuse;
             .loan-item {
-                &__upper {
+                &__lower {
+                    .box-piece {
+                        height: 50px;
+                        justify-content: space-between;
+                    }
                 }
 
-                &__lower {
+                &__divider {
+                    height: 5px;
+                    background: rgba(246, 246, 246, 1);
                 }
             }
         }

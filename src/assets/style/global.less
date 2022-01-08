@@ -1,8 +1,8 @@
 // 覆盖样式
 
 
-// 字体大小 fz-10 fz-24
-.loopFont(@i) when (@i<=24) {
+// 字体大小 fz-10 fz-26
+.loopFont(@i) when (@i<=26) {
     .fz-@{i} {
         font-size:~'@{i}px';
     }
@@ -98,7 +98,6 @@
 
 .round-dot-red {
     position: relative;
-
     &::before {
         content: " ";
         width: 8px;
@@ -111,6 +110,7 @@
         transform: translateY(-50%);
     }
 }
+
 
 .txt-tips {
     color: #c56149;
