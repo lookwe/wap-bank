@@ -1,28 +1,33 @@
 <template>
     <div>
-        <Home v-if="active === 'home'" />
-        <User v-if="active === 'user'" />
+        <transition name="van-fade">
+            <keep-alive>
+                <Home v-if="active === 'home'" />
+                <User v-if="active === 'user'" />
+            </keep-alive>
+        </transition>
+
         <van-tabbar v-model="active">
-            <van-tabbar-item name="home" icon="home-o">标签</van-tabbar-item>
-            <van-tabbar-item name="user" icon="search">标签</van-tabbar-item>
+            <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
+            <van-tabbar-item name="user" icon="contact">我</van-tabbar-item>
         </van-tabbar>
     </div>
 </template>
 
 <script>
-import Home from '@/views/home/index'
-import User from '@/views/user/index'
+import Home from "@/views/home/index";
+import User from "@/views/user/index";
 export default {
     components: {
         Home,
-        User
+        User,
     },
     data() {
         return {
-            active: 'home'
-        }
-    }
-}
+            active: "home",
+        };
+    },
+};
 </script>
 
 <style></style>

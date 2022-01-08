@@ -41,8 +41,8 @@ export default {
     },
     computed: {
         getGeneratLetter() {
-            var str = [];
-            for (var i = 65; i < 91; i++) {
+            let str = [];
+            for (let i = 65; i < 91; i++) {
                 str.push(String.fromCharCode(i));
             }
             return str;

@@ -13,11 +13,8 @@ import {
     IndexBar,
     IndexAnchor,
     Search,
-    Cell
+    Cell, PullRefresh, Empty, Skeleton
 } from 'vant' //引入组件
-import comIndexAnchor from './com-index-anchor'
-
-Vue.component('com-index-anchor', comIndexAnchor)
 
 Vue.use(Tabbar)
 Vue.use(TabbarItem)
@@ -32,9 +29,14 @@ Vue.use(IndexBar);
 Vue.use(IndexAnchor);
 Vue.use(Search);
 Vue.use(Cell);
-
-
+Vue.use(PullRefresh);
+Vue.use(Empty);
+Vue.use(Skeleton);
 Vue.use(Lazyload);
+
+// 自定义全局组件
+import comIndexAnchor from './com-index-anchor' // 地址筛选
+Vue.component('com-index-anchor', comIndexAnchor)
 
 // 注册时可以配置额外的选项
 Vue.use(Lazyload, {

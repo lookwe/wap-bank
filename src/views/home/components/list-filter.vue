@@ -4,7 +4,7 @@
             v-model="isFilterPopupShow"
             closeable
             position="bottom"
-            :style="{ height: '55%' }"
+            :style="{ height: '58%' }"
         >
             <div class="mod-fliter">
                 <div class="mod-fliter__header fz-20 fw-b">列表筛选</div>
