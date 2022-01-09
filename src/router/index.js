@@ -14,6 +14,7 @@ const HomeMation = () => import( /* webpackChunkName: 'HomeMation' */ '@/views/h
 // ==== 用户模块 ====
 
 // -- 客户
+const clientDetail = () => import( /* webpackChunkName: 'myCard' */ '@/views/user/manager/my-client/client-detail/index')
 
 // -- 经理
 const myCard = () => import( /* webpackChunkName: 'myCard' */ '@/views/user/manager/my-card')
@@ -65,6 +66,12 @@ const routes = [{
         name: 'publicFetch',
         component: publicFetch
     },
+    {
+        path: '/client-detail',
+        name: 'clientDetail',
+        component: clientDetail
+    },
+
 ]
 
 const router = new VueRouter({
