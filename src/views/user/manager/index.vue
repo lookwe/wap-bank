@@ -40,16 +40,6 @@
             </div>
         </div>
 
-        <br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br />
-
         <van-button type="primary" block @click="onToPage({ name: 'myCard' })"
             >我的名片</van-button
         >
@@ -62,6 +52,7 @@
             >我的进件</van-button
         >
         <br />
+
         <van-button
             type="primary"
             block
@@ -124,6 +115,7 @@ export default {
     .loan-item {
         height: 80px;
         background: chocolate;
+        margin-top: 20px;
     }
 }
 </style>

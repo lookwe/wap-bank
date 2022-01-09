@@ -189,7 +189,6 @@ export default {
     }
 
     .mod-main {
-        margin-bottom: 30px;
         &__consulting {
             height: 56px;
             border-radius: 5px;
