@@ -20,7 +20,10 @@
             <!-- 内容主体 -->
             <div class="mod-main u-page">
                 <!-- 资讯 -->
-                <div class="mod-main__consulting flex flex-center mb20">
+                <div
+                    class="mod-main__consulting flex flex-center mb20"
+                    @click="onToMationPage"
+                >
                     <div class="left-image">
                         <div>资讯</div>
                     </div>
@@ -64,6 +67,7 @@
                         class="loan-item mb20"
                         v-for="(item, index) in loanList"
                         :key="index"
+                        @click="onToDetailsPage"
                     >
                         <div class="loan-item__upper flex jsb">
                             <div class="flex">
@@ -120,7 +124,8 @@
             </div>
         </van-pull-refresh>
 
-        <listFilter ref="listFilter" />
+        <!-- 组件区域 -->
+        <listFilter ref="listFilter" @confirm="onFilterCallback" />
         <com-index-anchor ref="comIndexAnchor" @confirm="onAnchorCallback" />
     </div>
 </template>
@@ -142,9 +147,6 @@ export default {
             isLoading: false,
         };
     },
-    created() {
-        console.log(111);
-    },
     methods: {
         onRefresh() {
             setTimeout(() => {
@@ -152,9 +154,26 @@ export default {
             }, 1500);
         },
 
-        //
-        onAnchorCallback(item) {
-            console.log(item);
+        onFilterCallback(option) {
+            console.log(option);
+        },
+
+        onAnchorCallback(option) {
+            console.log(option);
+        },
+
+        onToMationPage() {
+            this.$router.push({
+                name: "HomeMation",
+                params: { id: "E123" },
+            });
+        },
+
+        onToDetailsPage() {
+            this.$router.push({
+                name: "HomeDetails",
+                params: { id: "E123" },
+            });
         },
     },
 };

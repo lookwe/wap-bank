@@ -139,6 +139,8 @@ export default {
             params: {},
 
             filter: {
+                productType: 1,
+                area: "广东",
                 loan_mount: [10, 50],
                 loan_rate: [0.5, 20],
             },
@@ -153,6 +155,9 @@ export default {
 
         confirm() {
             this.isFilterPopupShow = false;
+            this.$emit("confirm", {
+                ...this.filter,
+            });
         },
 
         __handlerCustomArea() {

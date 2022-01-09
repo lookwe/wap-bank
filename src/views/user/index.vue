@@ -1,18 +1,28 @@
 <template>
-    <div>555555555555555555555555555</div>
+    <div>
+        <!-- 用户 -->
+        <client v-if="user_role == 1"></client>
+
+        <!-- 经理 -->
+        <manager v-if="user_role == 2"></manager>
+    </div>
 </template>
 
 <script>
+import client from "@/views/user/client";
+import manager from "@/views/user/manager";
 export default {
-    name: "",
+    name: "user",
+    components: {
+        client,
+        manager,
+    },
     data() {
-        return {};
+        return {
+            user_role: 2,
+        };
     },
     computed: {},
-    created() {
-        console.log(2);
-    },
-    methods: {},
 };
 </script>
  
