@@ -3,13 +3,24 @@
     <div class="mod-user-manager u-page">
         <h1>经理</h1>
 
-        <van-button type="primary" block>我的名片</van-button>
+        <van-button type="primary" block @click="onToPage({ name: 'myCard' })"
+            >我的名片</van-button
+        >
         <br />
-        <van-button type="primary" block>我的客户</van-button>
+        <van-button type="primary" block @click="onToPage({ name: 'myClient' })"
+            >我的客户</van-button
+        >
         <br />
-        <van-button type="primary" block>我的进件</van-button>
+        <van-button type="primary" block @click="onToPage({ name: 'myPlan' })"
+            >我的进件</van-button
+        >
         <br />
-        <van-button type="primary" block>公害捞取</van-button>
+        <van-button
+            type="primary"
+            block
+            @click="onToPage({ name: 'publicFetch' })"
+            >公害捞取</van-button
+        >
     </div>
 </template>
  
@@ -19,7 +30,15 @@ export default {
     data() {
         return {};
     },
-    methods: {},
+    methods: {
+        onToPage(option) {
+            const router = {
+                ...option,
+                // ...
+            };
+            this.$router.push(router);
+        },
+    },
 };
 </script>
  

@@ -199,7 +199,7 @@ export default {
             .left-image {
                 width: 15%;
 
-                // 临时
+                // todo：临时 后面可能换成图片
                 div {
                     display: inline-block;
                     font-weight: 600;
