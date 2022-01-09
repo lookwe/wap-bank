@@ -31,7 +31,7 @@
                         | 张小伟查看了经营性贷款分三期资料档案
                     </div>
                     <div class="rigth-inco flex">
-                        <span class="round-dot-red"></span>
+                        <span class="round-dot green mr20"></span>
                         <van-icon name="arrow" color="#8E8E93" />
                     </div>
                 </div>

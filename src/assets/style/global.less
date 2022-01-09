@@ -95,28 +95,37 @@
 
 .loop(0, 5, 80);
 
-
-.round-dot-red {
+// 小圆点
+.round-dot {
     position: relative;
     &::before {
         content: " ";
         width: 8px;
         height: 8px;
-        background: #ED1A3A;
+        background: @primary-color;
         border-radius: 4px;
         position: absolute;
         top: 50%;
-        left: -15px;
         transform: translateY(-50%);
+    }
+    &.red::before {
+        background: #ED1A3A;
+    }
+    &.green::before {
+        background: #07c160;
+    }
+    &.txt::before {
+        left: -15px;
     }
 }
 
-
+// 公共文字样式
 .txt-tips {
     color: #c56149;
     background: #faf3ed;
     display: inline-block;
     font-size: 12px;
+    padding: 1px 3px;
 }
 
 .box-lb {
