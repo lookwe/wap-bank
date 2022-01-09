@@ -1,15 +1,27 @@
 <template>
     <!-- 贷款详情 -->
-    <div class=""></div>
+    <van-popup
+        v-model="isShow"
+        position="right"
+        :style="{ width: '100%', height: '100%' }"
+    >
+        <div class="mod-loan-details">123</div>
+    </van-popup>
 </template>
  
 <script>
 export default {
-    name: "vueName",
+    name: "loanDetails",
     data() {
-        return {};
+        return {
+            isShow: false,
+        };
     },
-    methods: {},
+    methods: {
+        show() {
+            this.isShow = true;
+        },
+    },
 };
 </script>
  
