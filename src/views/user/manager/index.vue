@@ -36,7 +36,12 @@
         <div class="my-loan u-page">
             <div class="fz-17 fw-b">我的贷款</div>
             <div>
-                <div class="loan-item"></div>
+                <div class="loan-item">
+                    <div class="fw-b fz-17">
+                        <span class="round-dot"></span>
+                        申请中
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -113,9 +118,12 @@ export default {
     }
 
     .loan-item {
-        height: 80px;
-        background: chocolate;
+        background: #f6f6f6;
         margin-top: 20px;
+        padding: 20px;
+        .round-dot {
+            margin-left: 15px;
+        }
     }
 }
 </style>

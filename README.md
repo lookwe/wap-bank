@@ -1,5 +1,7 @@
 # 银行贷款项目
 
+## 页面展示
+[![7kWatJ.png](https://s4.ax1x.com/2022/01/09/7kWatJ.png)](https://imgtu.com/i/7kWatJ)
 
 > 运行前，先检查是否安装了 yarn包管理， 没安装的话先 `npm i yarn -g`
 ## 安装依赖
