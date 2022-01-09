@@ -1,24 +1,26 @@
-# wap-staff
+# 银行贷款项目
 
-## Project setup
+## 页面展示
+[![7kfNKP.png](https://s4.ax1x.com/2022/01/09/7kfNKP.png)](https://imgtu.com/i/7kfNKP)
+
+> 运行前，先检查是否安装了 yarn包管理， 没安装的话先 `npm i yarn -g`
+## 安装依赖
 ```
-yarn install
+yarn
 ```
 
-### Compiles and hot-reloads for development
+### 运行项目
 ```
-yarn serve
+yarn start
 ```
 
-### Compiles and minifies for production
+### 项目打包
 ```
 yarn build
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 资源
+设计搞： [ui图](https://codesign.qq.com/s/2bzpZvJ4qXZkAaV).
+
+

@@ -1,11 +1,13 @@
 <template>
     <div>
-        <transition name="van-fade">
-            <keep-alive>
-                <Home v-if="active === 'home'" />
-                <User v-if="active === 'user'" />
-            </keep-alive>
-        </transition>
+        <div class="mb40">
+            <transition name="van-fade">
+                <keep-alive>
+                    <Home v-if="active === 'home'" />
+                    <User v-if="active === 'user'" />
+                </keep-alive>
+            </transition>
+        </div>
 
         <van-tabbar v-model="active">
             <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>

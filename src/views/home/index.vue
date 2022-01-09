@@ -31,7 +31,7 @@
                         | 张小伟查看了经营性贷款分三期资料档案
                     </div>
                     <div class="rigth-inco flex">
-                        <span class="round-dot green mr20"></span>
+                        <span class="round-dot red"></span>
                         <van-icon name="arrow" color="#8E8E93" />
                     </div>
                 </div>
@@ -139,8 +139,8 @@ export default {
     data() {
         return {
             swipeImageList: [
-                "https://img01.yzcdn.cn/vant/apple-1.jpg",
-                "https://img01.yzcdn.cn/vant/apple-2.jpg",
+                "https://s4.ax1x.com/2022/01/09/7kd8aV.jpg",
+                "https://s4.ax1x.com/2022/01/09/7kd3V0.jpg",
             ],
 
             loanList: [{}, {}, {}, {}, {}, {}],
@@ -189,7 +189,6 @@ export default {
     }
 
     .mod-main {
-        margin-bottom: 30px;
         &__consulting {
             height: 56px;
             border-radius: 5px;
