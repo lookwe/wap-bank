@@ -141,10 +141,6 @@ export default {
         margin-top: 20px;
         padding: 20px;
 
-        .round-dot {
-            margin-left: 15px;
-        }
-
         &__user {
             width: 50%;
             margin: 15px 0;

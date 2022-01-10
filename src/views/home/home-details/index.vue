@@ -95,19 +95,7 @@ export default {
 .mod-home-details {
     .mod-home-header {
         box-sizing: border-box;
-        .mod-home_title {
-            h3 {
-                color: #000000;
-                font-size: 20px;
-                margin: auto 0;
-            }
-            .logo {
-                display: block;
-                width: 28px;
-                height: 28px;
-                border: 1px solid #000000;
-            }
-        }
+
         .mod-home_rate {
             margin-top: 23px;
             .mod-home_rate_item {

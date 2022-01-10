@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="fz-15 c-black flex ac tel">
-                <img class="icon" />
+                <van-icon name="phone-o" size="18" />
                 <span class="tel-txt">18736463012</span>
             </div>
 
@@ -113,9 +113,8 @@
                         <div class="fz-13">注册日期：2015/02/04</div>
                         <div class="fz-13 manager">客户经理：张小凡</div>
                     </div>
-                    <div class="right-icon">
-                        <van-icon name="arrow" size="18" />
-                    </div>
+
+                    <van-icon name="arrow" size="18" />
                 </div>
             </div>
         </div>
@@ -144,136 +143,73 @@ export default {
 </script>
 
 <style scoped lang="less">
-img {
-    // FIXME
-    background: red;
-}
 .client-page {
-    padding: 17.5px;
-}
+    padding: 15px;
 
-.client-detail {
-    .company {
-        height: 18px;
-        .icon {
-            width: 13px;
-            height: 13px;
+    // 步骤
+    .step-content {
+        padding: 37px 0 0;
+        .title {
+            height: 22px;
+            line-height: 22px;
         }
-        .name {
-            line-height: 18px;
-            padding: 0 10px;
-        }
-    }
-
-    .user {
-        height: 30px;
-        margin: 15px 0 0;
-        .name {
-            font-weight: 500;
-        }
-        .tags {
-            .tag {
-                margin: 0 7px;
-                padding: 2px;
-                color: #c8593b;
-                background-color: #fbf2eb;
-            }
-        }
-    }
-
-    .tel {
-        height: 20px;
-        margin: 8px 0 0;
-        .icon {
-            width: 13px;
-            height: 13px;
-        }
-        .tel-txt {
-            padding: 0 10px;
-        }
-    }
-
-    .money-count {
-        margin: 15px 0 0;
-        .box-piece {
-            margin: 0 40px 0 0;
-            .txt-tips-color {
-                margin: 6px 0 0;
-            }
-            .c-r {
-                text-align: center;
-            }
-        }
-    }
-
-    .time-manager {
-        border-top: 1px solid #f0f0f0;
-        height: 18px;
-        padding-top: 16px;
-        margin-top: 20px;
-    }
-}
-
-.step-content {
-    padding: 37px 0 0;
-    .title {
-        height: 22px;
-        line-height: 22px;
-    }
-    .step-ul {
-        .step-li {
-            margin: 16px 0 0;
-            .name {
-                position: relative;
-                height: 23px;
-                line-height: 23px;
-                padding: 0 0 0 33px;
-                &:after {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 18px;
-                    height: 18px;
-                    content: " ";
-                    border: 2px solid #8e8e93;
-                    border-radius: 50%;
+        .step-ul {
+            .step-li {
+                margin: 16px 0 0;
+                .name {
+                    position: relative;
+                    height: 23px;
+                    line-height: 23px;
+                    padding: 0 0 0 33px;
+                    &:after {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 18px;
+                        height: 18px;
+                        content: " ";
+                        border: 2px solid #8e8e93;
+                        border-radius: 50%;
+                    }
+                    &:before {
+                        position: absolute;
+                        left: 6px;
+                        top: 6px;
+                        width: 10px;
+                        height: 10px;
+                        content: " ";
+                        background-color: #8e8e93;
+                        border-radius: 50%;
+                    }
                 }
-                &:before {
-                    position: absolute;
-                    left: 6px;
-                    top: 6px;
-                    width: 10px;
-                    height: 10px;
-                    content: " ";
-                    background-color: #8e8e93;
-                    border-radius: 50%;
-                }
-            }
-            .time-mark {
-                position: relative;
-                margin: 15px 0;
-                line-height: 16px;
-                padding: 0 0 10px 33px;
-                &:after {
-                    position: absolute;
-                    left: 10px;
-                    top: 0;
-                    width: 1px;
-                    height: 100%;
-                    content: " ";
-                    background-color: #e5e5ea;
-                    border-radius: 50%;
-                }
-                .time {
-                    height: 16px;
-                }
-                .mark {
-                    margin: 5px 0 0;
+                .time-mark {
+                    position: relative;
+                    margin: 15px 0;
+                    line-height: 16px;
+                    padding: 0 0 10px 33px;
+                    &:after {
+                        position: absolute;
+                        left: 10px;
+                        top: 0;
+                        width: 1px;
+                        height: 100%;
+                        content: " ";
+                        background-color: #e5e5ea;
+                        border-radius: 50%;
+                    }
+                    .time {
+                        height: 16px;
+                    }
+                    .mark {
+                        margin: 5px 0 0;
+                    }
                 }
             }
         }
     }
 }
+
+
 
 .part-content {
     .title {
@@ -285,27 +221,11 @@ img {
     .client-detail {
         padding: 16px 0;
         border-bottom: 6px solid #f6f6f6;
-
         &:nth-last-child(1) {
             border-bottom: none;
         }
-        .user .status {
-            .color {
-                width: 8px;
-                height: 8px;
-                margin: 0 10px;
-                border-radius: 50%;
-                background-color: #ff9500;
-            }
-        }
         .manager {
             padding: 0 16px;
-        }
-        .right-icon {
-            .icon {
-                width: 13px;
-                height: 13px;
-            }
         }
     }
 }
