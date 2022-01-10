@@ -1,5 +1,4 @@
 <template>
-    <!-- 用户类型 - 用户 -->
     <div class="mod-user-client">
         <div class="user-header header-bg">
             <van-image
@@ -13,9 +12,8 @@
                 <div class="fz-13 txt-tips-color">1873631034</div>
                 <div class="fz-13 txt-tips-color">深圳市腾讯科技有限公司</div>
             </div>
-
-            <div class="user-info__footer flex">
-                <div class="bnt bnt-reset">
+            <div class="double-bnt mt30">
+                <div class="bnt">
                     <van-button
                         icon="service-o"
                         block
@@ -25,17 +23,22 @@
                         >客户经理</van-button
                     >
                 </div>
-                <div class="bnt bnt-sbmit">
-                    <van-button plain round block type="primary"
+                <div class="bnt">
+                    <van-button
+                        plain
+                        round
+                        block
+                        type="primary"
+                        @click="$refs.editData.show()"
                         >编辑资料</van-button
                     >
                 </div>
             </div>
         </div>
 
+        <!-- 我的贷款 -->
         <div class="my-loan u-page">
             <div class="fz-17 fw-b">我的贷款</div>
-
             <div
                 class="loan-item"
                 v-for="(item, index) in loanList"
@@ -43,16 +46,12 @@
                 @click="onShowLoanDateils"
             >
                 <div class="fw-b fz-17">
-                    <template v-if="item.type == 1">
-                        <span class="round-dot"></span>申请中
-                    </template>
-
-                    <template v-if="item.type == 2">
-                        <span class="round-dot green"></span>已放款
-                    </template>
-
-                    <template v-if="item.type == 3">
-                        <span class="round-dot red"></span>已失败
+                    <template v-if="item.type == 1"
+                        ><span class="round-dot"></span>申请中 </template
+                    ><template v-if="item.type == 2"
+                        ><span class="round-dot green"></span>已放款 </template
+                    ><template v-if="item.type == 3"
+                        ><span class="round-dot red"></span>已失败
                     </template>
                 </div>
                 <div class="loan-item__user flex jsb">
@@ -68,44 +67,70 @@
                 <div class="fz-15 txt-tips-color">更新日期：2015/02/04</div>
             </div>
         </div>
+
+        <!-- 组件 -->
+        <loanDetails ref="loanDetails" />
+        <editData ref="editData" />
+        <contactManager ref="contactManager" />
     </div>
 </template>
- 
+
 <script>
+import loanDetails from "./loan-details";
+import editData from "@/views/user/client/components/edit-data";
+import contactManager from "@/views/user/client/components/contact-manager";
 export default {
     name: "client",
+    components: {
+        loanDetails,
+        editData,
+        contactManager,
+    },
     data() {
         return {
-            loanList: [{ type: 1 }, { type: 2 }, { type: 3 }, { type: 2 }],
+            loanList: [
+                {
+                    type: 1,
+                },
+
+                {
+                    type: 2,
+                },
+
+                {
+                    type: 3,
+                },
+
+                {
+                    type: 2,
+                },
+            ],
         };
     },
-    methods: {
-        onShowManager() {},
 
-        onShowLoanDateils() {},
+    methods: {
+        onShowManager() {
+            this.$refs.contactManager.show();
+        },
+
+        onShowLoanDateils() {
+            this.$refs.loanDetails.show();
+        },
     },
 };
-</script>
- 
-<style scoped lang="less">
+</script><style scoped lang="less">
 @import "../style/index.less";
+
 .mod-user-client {
     .user-header {
         text-align: center;
         padding: 50px 0 15px;
+
         .user-info {
             margin-top: 20px;
+
             div {
                 margin: 15px 0;
-            }
-
-            &__footer {
-                margin-top: 30px;
-                justify-content: space-around;
-                .bnt {
-                    width: 40%;
-                    height: 40px;
-                }
             }
         }
     }
@@ -115,6 +140,7 @@ export default {
         border-radius: 8px;
         margin-top: 20px;
         padding: 20px;
+
         .round-dot {
             margin-left: 15px;
         }

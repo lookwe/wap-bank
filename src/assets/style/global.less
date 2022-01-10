@@ -95,9 +95,10 @@
 
 .loop(0, 5, 80);
 
-// 小圆点
+// 小圆点 默认主题色
 .round-dot {
     position: relative;
+
     &::before {
         content: " ";
         width: 8px;
@@ -109,9 +110,11 @@
         left: -15px;
         transform: translateY(-50%);
     }
+
     &.red::before {
         background: #ED1A3A;
     }
+
     &.green::before {
         background: #07c160;
     }
@@ -124,6 +127,17 @@
     display: inline-block;
     font-size: 12px;
     padding: 1px 3px;
+}
+
+// 双按钮并排布局
+.double-bnt {
+    display: flex;
+    justify-content: space-around;
+
+    .bnt {
+        width: 40%;
+        height: 40px;
+    }
 }
 
 .box-lb {

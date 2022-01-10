@@ -1,9 +1,3 @@
-/*
- * @Author: daihanqiao@126.com
- * @Date: 2020-12-25 18:14:31
- * @LastEditTime: 2021-03-24 14:44:38
- * @LastEditors: daihanqiao@126.com
- */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 const Main = () => import( /* webpackChunkName: 'Main' */ '@/views/main')
@@ -14,7 +8,7 @@ const HomeMation = () => import( /* webpackChunkName: 'HomeMation' */ '@/views/h
 // ==== 用户模块 ====
 
 // -- 客户
-const clientDetail = () => import( /* webpackChunkName: 'myCard' */ '@/views/user/manager/my-client/client-detail/index')
+const myClientDetail = () => import( /* webpackChunkName: 'clientDetail' */ '@/views/user/manager/my-client/client-detail/index')
 
 // -- 经理
 const myCard = () => import( /* webpackChunkName: 'myCard' */ '@/views/user/manager/my-card')
@@ -26,51 +20,51 @@ const publicFetch = () => import( /* webpackChunkName: 'publicFetch' */ '@/views
 Vue.use(VueRouter)
 
 const routes = [{
-        path: '/',
-        redirect: '/main'
-    },
-    {
-        path: '/main',
-        name: 'main',
-        component: Main
-    },
-    {
-        path: '/home-details',
-        name: 'HomeDetails',
-        component: HomeDetails
-    },
-    {
-        path: '/home-mation',
-        name: 'HomeMation',
-        component: HomeMation
-    },
+    path: '/',
+    redirect: '/main'
+},
+{
+    path: '/main',
+    name: 'main',
+    component: Main
+},
+{
+    path: '/home-details',
+    name: 'HomeDetails',
+    component: HomeDetails
+},
+{
+    path: '/home-mation',
+    name: 'HomeMation',
+    component: HomeMation
+},
 
-    // 用户模块
-    {
-        path: '/my-card',
-        name: 'myCard',
-        component: myCard
-    },
-    {
-        path: '/my-client',
-        name: 'myClient',
-        component: myClient
-    },
-    {
-        path: '/my-plan',
-        name: 'myPlan',
-        component: myPlan
-    },
-    {
-        path: '/public-fetch',
-        name: 'publicFetch',
-        component: publicFetch
-    },
-    {
-        path: '/client-detail',
-        name: 'clientDetail',
-        component: clientDetail
-    },
+// 用户模块
+{
+    path: '/my-card',
+    name: 'myCard',
+    component: myCard
+},
+{
+    path: '/my-client',
+    name: 'myClient',
+    component: myClient
+},
+{
+    path: '/my-plan',
+    name: 'myPlan',
+    component: myPlan
+},
+{
+    path: '/public-fetch',
+    name: 'publicFetch',
+    component: publicFetch
+},
+{
+    path: '/my-client-detail',
+    name: 'myClientDetail',
+    component: myClientDetail
+},
 
 ]
 

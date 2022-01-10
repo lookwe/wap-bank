@@ -45,7 +45,9 @@ export default {
             const router = {
                 params: { id: "E123" },
             };
-            router.name = type == 1 ? "HomeDetails" : "myClient";
+
+            // 判断是否我的客户
+            router.name = type == 1 ? "HomeDetails" : "myClientDetail";
             this.$router.push(router);
         },
     },
