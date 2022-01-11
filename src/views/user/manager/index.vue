@@ -2,7 +2,7 @@
     <!-- 用户类型 - 经理 -->
     <div class="mod-user-manager">
         <van-button type="primary" block @click="onToPage({ name: 'myCard' })"
-            >我的名片</van-button
+            >我的名片2</van-button
         >
         <br />
         <van-button type="primary" block @click="onToPage({ name: 'myClient' })"
