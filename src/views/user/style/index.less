@@ -1,9 +1,133 @@
 // 用户页 公共样式
 .header-bg {
-    background: linear-gradient(
-        180deg,
-        rgba(255, 107, 0, 0.05) 0%,
-        rgba(255, 255, 255, 0.04) 42%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(255, 107, 0, 0.05) 0%,
+            rgba(255, 255, 255, 0.04) 42%,
+            rgba(255, 255, 255, 0) 100%);
+}
+
+.mod-public-fetch-card {
+    overflow: hidden;
+    position: relative;
+    width: 343px;
+    height: 152.74px;
+    opacity: 1;
+    background: rgba(255, 255, 255, 1);
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+
+    .card-head {
+        width: 309.26px;
+        height: 29px;
+        position: absolute;
+        left: 50%;
+        top: 16px;
+        transform: translateX(-50%);
+        display: flex;
+
+        .card-name {
+            line-height: 29px;
+            height: 29px;
+            opacity: 1;
+            color: rgba(0, 0, 0, 1);
+            font-size: 20px;
+            font-weight: 500;
+            font-family: "PingFang SC";
+            text-align: center;
+        }
+
+        .card-issue {
+            margin-top: 6px;
+            margin-left: 11px;
+            line-height: 17px;
+            height: 17px;
+            opacity: 1;
+            background-color: rgba(251, 242, 235, 1);
+            color: rgba(200, 89, 59, 1);
+            font-size: 11px;
+            font-weight: 400;
+            font-family: "SF Pro Text";
+            text-align: center;
+
+            .issue-txt {
+                margin: 2px;
+            }
+        }
+
+        .card-btn {
+            width: 70px;
+            height: 29px;
+            line-height: 29px;
+            text-align: center;
+            border-radius: 39px;
+            opacity: 1;
+            background: rgba(255, 131, 0, 1);
+            font-size: 13px;
+            font-weight: 400;
+            font-family: ".PingFang SC";
+            color: rgba(255, 255, 255, 1);
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    .card-tel {
+        width: 199.68px;
+        height: 20px;
+        margin-left: 16px;
+        margin-top: 53.74px;
+
+        .tel {
+            margin-left: 10.5px;
+        }
+    }
+
+    .card-pcs {
+        width: 44px;
+        height: 29px;
+        line-height: 29px;
+        opacity: 1;
+        margin-top: 15px;
+        margin-left: 20px;
+        box-sizing: border-box;
+        color: rgba(237, 26, 58, 1);
+        font-weight: 500;
+        text-align: left;
+        font-size: 13px;
+        font-family: "SF Pro Text";
+    }
+
+    .card-footer {
+        width: 311px;
+        height: 13px;
+        position: absolute;
+        top: 123.74px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-between;
+        line-height: 13px;
+        font-size: 11px;
+        font-weight: 500;
+        font-family: "SF Pro Text";
+        text-align: center;
+        color: rgba(142, 142, 147, 1);
+
+        .enter {
+            width: 13px;
+            height: 13px;
+            line-height: 13px;
+            padding: 2px;
+            font-size: 12px;
+            font-weight: 800;
+            color: #fff;
+            background: rgba(229, 229, 234, 1);
+            border-radius: 50%;
+        }
+    }
+}
+
+.mod-public-fetch-card:last-child {
+    margin-bottom: 0;
 }

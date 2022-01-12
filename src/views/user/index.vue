@@ -19,11 +19,11 @@ export default {
     },
     data() {
         return {
-            user_role: 1,
+            user_role: 2,
         };
     },
 };
 </script>
- 
+
 <style scoped lang="less">
 </style>
