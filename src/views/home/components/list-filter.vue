@@ -18,7 +18,9 @@
                             <van-button class="bnt" plain type="primary"
                                 >税金贷</van-button
                             >
-                            <van-button class="bnt" plain>发票贷</van-button>
+                            <van-button class="bnt" plain type="default"
+                                >发票贷</van-button
+                            >
                         </div>
                     </div>
 

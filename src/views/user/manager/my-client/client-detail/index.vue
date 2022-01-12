@@ -121,14 +121,28 @@
 
         <div class="double-bnt">
             <div class="bnt">
-                <van-button block round type="primary">添加跟进记录</van-button>
+                <van-button
+                    block
+                    round
+                    type="primary"
+                    @click="$refs.comAddRecord.show()"
+                    >添加跟进记录</van-button
+                >
             </div>
             <div class="bnt">
-                <van-button plain round block type="primary"
+                <van-button
+                    plain
+                    round
+                    block
+                    type="primary"
+                    @click="$refs.comAddLabel.show()"
                     >添加/修改标签</van-button
                 >
             </div>
         </div>
+
+        <com-add-label ref="comAddLabel" />
+        <com-add-record ref="comAddRecord" />
     </div>
 </template>
 
@@ -208,8 +222,6 @@ export default {
         }
     }
 }
-
-
 
 .part-content {
     .title {

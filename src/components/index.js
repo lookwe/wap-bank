@@ -38,7 +38,11 @@ Vue.use(Lazyload);
 
 // 自定义全局组件
 import comIndexAnchor from './com-index-anchor' // 地址筛选
+import comAddLabel from './com-add-label' // 添加标签
+import comAddRecord from './com-add-record' // 添加标签
 Vue.component('com-index-anchor', comIndexAnchor)
+Vue.component('com-add-label', comAddLabel)
+Vue.component('com-add-record', comAddRecord)
 
 // 注册时可以配置额外的选项
 Vue.use(Lazyload, {
