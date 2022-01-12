@@ -55,7 +55,7 @@
                         <div class="c-r">
                             <span class="fz-17">0.67%</span>
                         </div>
-                        <div class="fz-12 txt-tips-color">贷款率</div>
+                        <div class="fz-12 txt-tips-color">贷款利率</div>
                     </div>
 
                     <div class="flex f-d-c box-piece">
@@ -71,6 +71,40 @@
                         </div>
                         <div class="fz-12 txt-tips-color">贷款计划</div>
                     </div>
+                </div>
+            </div>
+
+            <div class="detail-ul fz-14 txt-tips-color">
+                <div>
+                    <span>申请日期：</span>
+                    <span>2020/02/04</span>
+                </div>
+
+                <div>
+                    <span>更新日期：</span>
+                    <span>2020/02/04</span>
+                </div>
+
+                <div>
+                    <span>数据来源：</span>
+                    <span>58同城</span>
+                </div>
+
+                <div>
+                    <span>客户经理：</span>
+                    <span>张小飞</span>
+                </div>
+
+                <div>
+                    <span>贷款备注：</span>
+                    <span>无备注</span>
+                </div>
+            </div>
+            <div class="li__divider mt20"></div>
+
+            <div class="track-progress">
+                <div class="title">
+                    跟踪进度 <span class="sun-speed">(2/12)</span>
                 </div>
             </div>
         </div>
@@ -106,6 +140,23 @@ export default {
     .client-detail {
         background: #f0f0f0;
         padding: 15px;
+    }
+
+    .detail-ul {
+        > div {
+            margin: 10px 0;
+        }
+    }
+
+    .track-progress {
+        margin-top: 10px;
+        .title {
+            font-size: 17px;
+            .sun-speed {
+                font-size: 16px;
+                color: #8e8e93;
+            }
+        }
     }
 }
 </style>

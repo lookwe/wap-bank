@@ -118,7 +118,7 @@
                             </div>
                         </div>
 
-                        <div class="loan-item__divider mt20"></div>
+                        <div class="li__divider mt20"></div>
                     </div>
                 </div>
             </div>
@@ -247,11 +247,6 @@ export default {
                         height: 50px;
                         justify-content: space-between;
                     }
-                }
-
-                &__divider {
-                    height: 5px;
-                    background: rgba(246, 246, 246, 1);
                 }
             }
         }

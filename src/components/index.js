@@ -13,7 +13,7 @@ import {
     IndexBar,
     IndexAnchor,
     Search,
-    Cell, PullRefresh, Empty, Skeleton
+    Cell, PullRefresh, Empty, Skeleton, Step, Steps
 } from 'vant' //引入组件
 
 Vue.use(Tabbar)
@@ -32,6 +32,8 @@ Vue.use(Cell);
 Vue.use(PullRefresh);
 Vue.use(Empty);
 Vue.use(Skeleton);
+Vue.use(Step);
+Vue.use(Steps);
 Vue.use(Lazyload);
 
 // 自定义全局组件
