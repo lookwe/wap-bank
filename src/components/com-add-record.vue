@@ -5,8 +5,8 @@
         position="bottom"
         :style="{ height: '38%' }"
     >
-        <div class="mod-fliter">
-            <div class="mod-fliter__header fz-20 fw-b">添加跟进记录</div>
+        <div class="mod-popup">
+            <div class="mod-popup__header">添加跟进记录</div>
 
             <div class="mod-input-txt">请输入</div>
 
@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-.mod-fliter {
+.mod-popup {
     &__header {
         padding: 15px;
         box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.06);

@@ -5,8 +5,8 @@
         position="bottom"
         :style="{ height: '65%' }"
     >
-        <div class="mod-fliter">
-            <div class="mod-fliter__header fz-20 fw-b">标签列表</div>
+        <div class="mod-popup">
+            <div class="mod-popup__header">标签列表</div>
 
             <div class="u-page">
                 <!-- 看需求，如果数据结构准许 可执行遍历整个 item -->
@@ -115,7 +115,7 @@
                 </div>
             </div>
 
-            <div class="mod-fliter__footer flex">
+            <div class="mod-popup__footer flex">
                 <div class="bnt bnt-reset">
                     <van-button
                         plain
@@ -184,12 +184,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-.mod-fliter {
-    &__header {
-        padding: 15px;
-        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.06);
-    }
-
+.mod-popup {
     .filter-item {
         /deep/.van-button--plain {
             background-color: #f0f0f0;

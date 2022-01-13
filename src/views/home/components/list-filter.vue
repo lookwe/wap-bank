@@ -1,13 +1,13 @@
 <template>
     <div>
         <van-popup
-            v-model="isFilterPopupShow"
+            v-model="isShow"
             closeable
             position="bottom"
             :style="{ height: '58%' }"
         >
-            <div class="mod-fliter">
-                <div class="mod-fliter__header fz-20 fw-b">列表筛选</div>
+            <div class="mod-popup">
+                <div class="mod-popup__header">列表筛选</div>
 
                 <div class="u-page">
                     <div class="filter-item">
@@ -108,7 +108,7 @@
                     </div>
                 </div>
 
-                <div class="mod-fliter__footer flex">
+                <div class="mod-popup__footer flex">
                     <div class="bnt bnt-reset">
                         <van-button
                             plain
@@ -131,13 +131,13 @@
         <com-index-anchor ref="comIndexAnchor" @confirm="__onAnchorConfirm" />
     </div>
 </template>
- 
+
 <script>
 export default {
     name: "listFilter",
     data() {
         return {
-            isFilterPopupShow: false,
+            isShow: false,
             params: {},
 
             filter: {
@@ -151,12 +151,12 @@ export default {
     methods: {
         show(params) {
             this.params = params;
-            this.isFilterPopupShow = true;
+            this.isShow = true;
         },
         resetData() {},
 
         confirm() {
-            this.isFilterPopupShow = false;
+            this.isShow = false;
             this.$emit("confirm", {
                 ...this.filter,
             });
@@ -173,14 +173,9 @@ export default {
     },
 };
 </script>
- 
-<style scoped lang="less">
-.mod-fliter {
-    &__header {
-        padding: 15px;
-        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.06);
-    }
 
+<style scoped lang="less">
+.mod-popup {
     .filter-item {
         /deep/.van-button--plain {
             background-color: #f0f0f0;
@@ -212,7 +207,8 @@ export default {
     }
 
     &__footer {
-        padding: 0 30px;
+        padding: 0 20px;
+        margin-bottom: 30px;
         justify-content: space-around;
         .bnt {
             width: 40%;

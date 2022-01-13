@@ -44,23 +44,73 @@
                     <span class="u-line-1">广东、山西、河南、山东、</span>
                 </div>
             </div>
-            <div class="mod-home_line"></div>
+            <div class="li__divider mt30"></div>
         </div>
 
-        <div
-            class="mod-home-main"
-            v-for="(item, index) in contentList"
-            :key="index"
-        >
-            <div class="item-title fz-17 fw-b">{{ item.title }}</div>
-            <div class="item-content txt-light-color">{{ item.content }}</div>
+        <!-- 列表介绍 -->
+        <div class="mod-home-main">
+            <div
+                class="main-item"
+                v-for="(item, index) in contentList"
+                :key="index"
+            >
+                <div class="item-title fz-17 fw-b">{{ item.title }}</div>
+                <div class="item-content txt-light-color">
+                    {{ item.content }}
+                </div>
+            </div>
         </div>
+
+        <div class="mod-bootom-msg flex flex-center">
+            <van-image
+                round
+                width="30px"
+                height="30px"
+                src="https://img01.yzcdn.cn/vant/cat.jpeg"
+            />
+            <span class="pl10">张小凡刚刚进件了</span>
+        </div>
+
+        <div class="mod-bottom-fn" safe-area-inset-bottom>
+            <div class="u-page flex jsb">
+                <div class="left-fn-box flex">
+                    <div class="fn-item" @click="$router.go(-1)">
+                        <van-icon name="arrow-left" size="26" />
+                        <div>返回</div>
+                    </div>
+                    <div class="fn-item">
+                        <van-icon name="share-o" size="26" />
+                        <div>分享</div>
+                    </div>
+                    <div class="fn-item">
+                        <van-icon name="chat-o" size="26" />
+                        <div>客户经理</div>
+                    </div>
+                </div>
+
+                <div class="right-fn-box flex ac">
+                    <van-button
+                        round
+                        type="primary"
+                        block
+                        @click="$refs.applyInfo.show()"
+                        >立刻申请</van-button
+                    >
+                </div>
+            </div>
+        </div>
+
+        <applyInfo ref="applyInfo" />
     </div>
 </template>
 
 <script>
+import applyInfo from "@/views/home/components/apply-info";
 export default {
     name: "homeDetails",
+    components: {
+        applyInfo,
+    },
     data() {
         return {
             contentList: [
@@ -87,12 +137,14 @@ export default {
             ],
         };
     },
+
     methods: {},
 };
 </script>
 
 <style scoped lang="less">
 .mod-home-details {
+    position: relative;
     .mod-home-header {
         box-sizing: border-box;
 
@@ -142,22 +194,59 @@ export default {
                 }
             }
         }
-        .mod-home_line {
-            width: 343px;
-            height: 5px;
-            opacity: 1;
-            background: #f6f6f6;
-            margin: 20px auto 0;
-        }
     }
 
     .mod-home-main {
-        margin: 15px 0;
-        .item-title {
-            margin: 20px 0;
+        margin-bottom: 100px;
+        .main-item {
+            margin: 15px 0;
+            .item-title {
+                margin: 20px 0;
+            }
+            .item-content {
+                font-size: 15px;
+            }
         }
-        .item-content {
-            font-size: 15px;
+    }
+
+    .mod-bootom-msg {
+        position: fixed;
+        bottom: 120px;
+        left: 15px;
+        height: 40px;
+        padding: 5px 10px;
+        border-radius: 25px;
+
+        background: #fff;
+        box-shadow: 0 16px 16px 0 rgba(50.1, 50.1, 71.27, 0.08),
+            0 24px 32px 0 rgba(50.1, 50.1, 71.27, 0.08);
+    }
+
+    .mod-bottom-fn {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 90px;
+        width: 100%;
+        background: #f6f6f6;
+
+        .left-fn-box {
+            .fn-item {
+                text-align: center;
+                &:not(:last-child) {
+                    margin-right: 16px;
+                }
+
+                > div {
+                    font-size: 15px;
+                    color: #8e8e93;
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        .right-fn-box {
+            width: 40%;
         }
     }
 }
