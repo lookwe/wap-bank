@@ -10,7 +10,7 @@
             <div class="mod-popup">
                 <div class="mod-popup__header">申请信息</div>
 
-                <div class="">
+                <div class="mt15">
                     <van-form
                         :show-error-message="false"
                         @submit="onSubmit"

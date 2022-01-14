@@ -1,10 +1,8 @@
 <template>
     <div>
         <div class="mb40">
-            <keep-alive>
-                <Home v-if="active === 'home'" />
-                <User v-if="active === 'user'" />
-            </keep-alive>
+            <Home v-if="active === 'home'" />
+            <User v-if="active === 'user'" />
         </div>
 
         <van-tabbar safe-area-inset-bottom v-model="active">

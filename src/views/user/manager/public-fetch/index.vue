@@ -1,5 +1,5 @@
 <template>
-    <div class="mod-public-fetch">
+    <div class="mod-public-fetch u-page">
         <div
             class="mod-public-fetch-card"
             v-for="item of list"
@@ -39,7 +39,7 @@
         <fetch-prop ref="fetchProp" @confirm="onfetchPropCallback"></fetch-prop>
     </div>
 </template>
- 
+
 <script>
 import fetchProp from "@/views/user/manager/public-fetch/components/fetch-popup.vue";
 export default {
@@ -132,14 +132,12 @@ export default {
     },
 };
 </script>
- 
+
 <style scoped lang="less">
 .mod-public-fetch {
     @import "../../style/index.less";
-    opacity: 1;
-    background: rgba(246, 246, 246, 1);
-    width: 100vw;
-    min-height: 100vh;
-    padding-top: 16px;
+    background: #f6f6f6;
+    height: 100vh;
+    overflow-y: auto;
 }
 </style>

@@ -168,6 +168,10 @@ export default {
 
         confirm() {
             this.isShow = false;
+            this.$toast({
+                message: "添加成功",
+                icon: "checked",
+            });
             this.$emit("confirm", {});
         },
 

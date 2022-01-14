@@ -1,12 +1,14 @@
 <template>
     <div id="app">
         <keep-alive>
-            <router-view></router-view>
+            <!-- Does the page need to be cached -->
+            <router-view v-if="$route.meta.keeAlive"></router-view>
         </keep-alive>
+        <router-view v-if="!$route.meta.keeAlive"></router-view>
     </div>
 </template>
 
 <script>
 export default {};
 </script>
-<style></style>
+

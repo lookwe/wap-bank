@@ -3,12 +3,18 @@
         v-model="isShow"
         closeable
         position="bottom"
+        @closed="resetData"
         :style="{ height: '38%' }"
     >
         <div class="mod-popup">
             <div class="mod-popup__header">添加跟进记录</div>
 
-            <div class="mod-input-txt">请输入</div>
+            <div class="mod-input-txt">
+                <textarea
+                    placeholder="请输入跟进内容（50字内）"
+                    v-model="text"
+                />
+            </div>
 
             <div class="mod-footer-bnt">
                 <van-button round block type="primary" @click="confirm"
@@ -25,16 +31,28 @@ export default {
     data() {
         return {
             isShow: false,
+            text: "",
         };
     },
     methods: {
         show() {
             this.isShow = true;
+
+            // 默认提交按钮后 文案
         },
-        resetData() {},
+        resetData() {
+            this.text = "";
+            this.finallyMsg &&
+                this.$toast({
+                    message: this.finallyMsg,
+                    icon: "checked",
+                });
+        },
 
         confirm() {
             this.isShow = false;
+            this.finallyMsg = "提交成功" || "服务出错";
+
             this.$emit("confirm", {});
         },
     },
@@ -43,14 +61,19 @@ export default {
 
 <style scoped lang="less">
 .mod-popup {
-    &__header {
-        padding: 15px;
-        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.06);
-    }
-
     .mod-input-txt {
         height: 166px;
-        background: #f6f6f6;
+        textarea {
+            outline-style: none;
+            border: none;
+            background: #f6f6f6;
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+            font-family: "Microsoft soft";
+        }
     }
     .mod-footer-bnt {
         padding: 20px;

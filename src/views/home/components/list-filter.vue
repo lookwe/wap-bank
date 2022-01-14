@@ -4,7 +4,7 @@
             v-model="isShow"
             closeable
             position="bottom"
-            :style="{ height: '58%' }"
+            :style="{ height: '60%' }"
         >
             <div class="mod-popup">
                 <div class="mod-popup__header">列表筛选</div>

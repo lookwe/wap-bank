@@ -3,18 +3,27 @@
         <van-popup
             v-model="isPopupShow"
             closeable
-            position="bottom"
+            position="right"
             :style="{ height: '100%' }"
         >
             <div class="cardbox">
-                <div class="mod-public-fetch-card" :key="params.name">
-                    <div class="card-head">
-                        <div class="card-name">
-                            {{ params.name }}
+                <div class="mod-public-fetch-card">
+
+                    
+                    <div class="client-detail">
+                        <div class="flex ac company">
+                            <van-icon name="hotel-o" size="18" />
+                            <span class="txt-tips-color fz-13 name"
+                                >深圳市腾讯科技有限公司</span
+                            >
                         </div>
+                    </div>
+
+                    <div class="card-head">
+                        <div class="card-name">李四</div>
                         <div
                             class="card-issue"
-                            v-for="iss of params.issue"
+                            v-for="iss of ['有意向', '随便聊']"
                             :key="iss"
                         >
                             <span class="issue-txt">
@@ -24,13 +33,11 @@
                     </div>
                     <div class="card-tel">
                         <van-icon name="phone-o" />
-                        <span class="tel">{{ params.tel }}</span>
+                        <span class="tel">17668292981</span>
                     </div>
                     <div class="card-pcs">
-                        <span style="font-size: 20px; margin-top: -1px">{{
-                            params.pcs
-                        }}</span>
-                        <span style="font-size: 13px">次</span>
+                        <span class="fz-20">2</span>
+                        <span class="fz-13">次</span>
                     </div>
                     <div class="card-footer">
                         <div class="">流转次数</div>
@@ -108,12 +115,10 @@ export default {
     @import "../../../style/index.less";
     position: relative;
     .cardbox {
-        width: 375px;
-        height: 153.74px;
+        padding: 15px;
         background: rgba(255, 255, 255, 1);
         .mod-public-fetch-card {
             height: 137px;
-            margin-top: -2px;
             box-sizing: border-box;
             .card-pcs {
                 color: rgba(0, 0, 0, 0.9);
