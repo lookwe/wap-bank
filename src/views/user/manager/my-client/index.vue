@@ -1,5 +1,5 @@
 <template>
-    <div class="mod-my-card">
+    <div class="my-client">
         <div class="mod-card-top">
             <div class="card-text1">999</div>
             <div class="card-text2">我的客户</div>
@@ -87,33 +87,9 @@ export default {
 
 <style lang="less" scoped>
 @import "../../style/index.less";
-.mod-my-card {
-    position: relative;
+.my-client {
     .mod-card-top {
-        overflow: hidden;
-        width: 100vw;
-        height: 269px;
         background: #d41732;
-        z-index: 0;
-        .card-text1 {
-            line-height: 69px;
-            height: 69px;
-            color: rgba(255, 255, 255, 1);
-            font-size: 48px;
-            font-weight: 500;
-            margin-top: 45px;
-            margin-left: 30px;
-        }
-        .card-text2 {
-            height: 22px;
-            opacity: 0.9000000357627869;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 22px;
-            margin-top: 5px;
-            margin-left: 30px;
-        }
     }
     .cards {
         margin-top: -100px;
