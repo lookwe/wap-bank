@@ -12,7 +12,7 @@ import {
     Slider,
     IndexBar,
     IndexAnchor,
-    Search, Field, Form,
+    Search, Field, Form, Dialog,
     Cell, PullRefresh, Empty, Skeleton, Step, Steps
 } from 'vant' //引入组件
 
@@ -36,6 +36,7 @@ Vue.use(Step);
 Vue.use(Steps);
 Vue.use(Field);
 Vue.use(Form);
+Vue.use(Dialog);
 Vue.use(Lazyload);
 
 // 自定义全局组件

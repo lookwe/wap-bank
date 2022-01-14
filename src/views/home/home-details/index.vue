@@ -83,7 +83,11 @@
                         <div>分享</div>
                     </div>
                     <div class="fn-item">
-                        <van-icon name="chat-o" size="26" />
+                        <van-icon
+                            name="chat-o"
+                            size="26"
+                            @click="onShowManager"
+                        />
                         <div>客户经理</div>
                     </div>
                 </div>
@@ -100,6 +104,9 @@
             </div>
         </div>
 
+        <van-dialog v-model="showManagerDialig" show-cancel-button>
+            <img src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
+        </van-dialog>
         <applyInfo ref="applyInfo" />
     </div>
 </template>
@@ -135,10 +142,16 @@ export default {
                         "慧到账是慧算账专属为正在服务的代账客户提供的线上金融类增值服务，只要您有融资需求随时可以在线直接申请",
                 },
             ],
+
+            showManagerDialig: false,
         };
     },
 
-    methods: {},
+    methods: {
+        onShowManager() {
+            this.showManagerDialig = true;
+        },
+    },
 };
 </script>
 
