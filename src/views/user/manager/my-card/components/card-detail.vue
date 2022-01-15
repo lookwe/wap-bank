@@ -62,7 +62,9 @@
             </div>
 
             <!-- 跟进记录  -->
-            <com-steps />
+            <div class="u-page">
+                <com-steps />
+            </div>
 
             <div class="double-bnt">
                 <div class="bnt">

@@ -1,6 +1,6 @@
 <template>
-    <div class="mod-user-client">
-        <div class="user-header header-bg">
+    <div class="mod-user-client header-bg">
+        <div class="user-header header-bg-img">
             <van-image
                 round
                 width="5rem"

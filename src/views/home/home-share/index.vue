@@ -1,14 +1,14 @@
 <template>
     <div class="home-share">
         <div class="share-box">
-            <div class="upper-lalf">
+            <div class="upper-lalf header-bg-img">
                 <van-image
                     round
                     width="50px"
                     height="50px"
                     src="https://img01.yzcdn.cn/vant/cat.jpeg"
                 />
-                <h3 class="fz-22">招商银行富税贷</h3>
+                <h3 class="fz-24">招商银行富税贷</h3>
                 <div class="mod-home_rate flex ac">
                     <div class="mod-home_rate_item">
                         <div class="number mb10">5-50万</div>
@@ -28,6 +28,10 @@
 
             <!-- 二维码 -->
             <div class="lower-half">
+                <div class="triangle flex jsb">
+                    <div class="triangle__left"></div>
+                    <div class="triangle__right"></div>
+                </div>
                 <div class="QR-code">
                     <van-image
                         width="100%"
@@ -63,16 +67,31 @@ export default {
     data() {
         return {};
     },
+
+    mounted() {
+        // js判断 双三角形
+        const shareWidth = document.querySelector(".share-box").clientWidth;
+        console.log("宽度：", shareWidth);
+
+        const triangle__left = document.querySelector(".triangle__left");
+        const triangle__right = document.querySelector(".triangle__right");
+
+        triangle__left.style.borderWidth = `0 ${shareWidth / 2}px 37px 0`;
+        triangle__right.style.borderWidth = `0px 0px 37px ${shareWidth / 2}px`;
+    },
 };
 </script>
 
 <style scoped lang="less">
 .home-share {
     padding: 30px;
+    @red: rgba(237, 26, 58, 1);
+
     .share-box {
         margin-top: 20px;
         background: #fff;
         border-radius: 4px;
+        box-sizing: border-box;
         box-shadow: 0 16px 16px 0 rgba(50.1, 50.1, 71.27, 0.08),
             0 24px 32px 0 rgba(50.1, 50.1, 71.27, 0.08);
 
@@ -86,7 +105,7 @@ export default {
                         line-height: 29px;
                         margin-top: 0;
 
-                        color: rgba(237, 26, 58, 1);
+                        color: @red;
                         font-size: 20px;
                         font-weight: 500;
                         font-family: "PingFang SC";
@@ -107,14 +126,37 @@ export default {
         }
 
         .lower-half {
-            height: 260px;
-            background: hsl(351, 85%, 52%);
-            overflow: hidden;
+            height: 210px;
+            background: @red;
+            display: flex;
+            position: relative;
+            box-sizing: border-box;
+
+            // 三角形
+            .triangle {
+                position: absolute;
+                top: -35px;
+                left: 0;
+                &__left {
+                    width: 0px;
+                    height: 0px;
+                    border-color: @red transparent;
+                    border-style: solid;
+                }
+
+                &__right {
+                    width: 0px;
+                    height: 0px;
+                    border-color: @red transparent;
+                    border-style: solid;
+                }
+            }
+
             .QR-code {
                 width: 180px;
                 height: 170px;
                 background: #fff;
-                margin: 50px auto;
+                margin: 20px auto;
             }
         }
     }
@@ -122,6 +164,8 @@ export default {
     .share-fn-box {
         padding: 15px;
         margin-top: 20px;
+        position: relative;
+
         .fn-item {
             text-align: center;
 

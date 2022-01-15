@@ -103,14 +103,18 @@
             <div class="li__divider mt20"></div>
 
             <div class="track-progress">
-                <div class="title">
-                    跟踪进度 <span class="sun-speed">(2/12)</span>
-                </div>
+                <com-steps :list="stepList">
+                    <template v-slot:title>
+                        <div class="title">
+                            跟踪进度 <span class="sun-speed">(2/12)</span>
+                        </div>
+                    </template>
+                </com-steps>
             </div>
         </div>
     </van-popup>
 </template>
- 
+
 <script>
 export default {
     name: "loanDetails",
@@ -121,6 +125,16 @@ export default {
             loanInfo: {
                 type: 1,
             },
+            stepList: [
+                {
+                    name: "切格瓦拉1",
+                    time: "2021-10-01 10:00:00",
+                },
+                {
+                    name: "切格瓦拉2",
+                    time: "2021-10-01 10:00:00",
+                },
+            ],
         };
     },
     methods: {

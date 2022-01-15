@@ -37,7 +37,9 @@
             </div>
 
             <!-- 跟进记录  -->
-            <com-steps />
+            <div class="u-page">
+                <com-steps />
+            </div>
 
             <div class="mod-footer-bnt">
                 <van-button round block type="primary" @click="confirm"

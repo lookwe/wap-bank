@@ -1,7 +1,14 @@
 <template>
-    <div class="com-stepes u-page">
+    <div class="com-stepes">
         <!-- 跟进记录  -->
-        <div class="stepes-title">跟进记录</div>
+        <template v-if="$slots.title">
+            <slot name="title" />
+        </template>
+
+        <template v-else>
+            <div class="stepes-title">{{ title }}</div>
+        </template>
+
         <van-steps direction="vertical" active-color="#FF8300" :active="active">
             <van-step
                 class="stepe-item"
@@ -89,13 +96,21 @@ export default {
                 ];
             },
         },
-        data() {
-            return {
-                active: 1,
-            };
+
+        title: {
+            type: String,
+            default: "跟进记录",
         },
-        methods: {},
+
+        active: {
+            type: [String, Number],
+            default: 0,
+        },
     },
+    data() {
+        return {};
+    },
+    methods: {},
 };
 </script>
 

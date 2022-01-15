@@ -1,6 +1,6 @@
 <template>
     <!-- 用户类型 - 经理 -->
-    <div class="mod-user-manager u-page header-bg">
+    <div class="mod-user-manager u-page header-bg-img">
         <div class="user-header flex">
             <van-image
                 round
@@ -125,7 +125,7 @@ export default {
     }
 
     .function-list {
-        margin-top: 30px;
+        margin-top: 80px;
 
         .function-item {
             background: #f6f6f6;

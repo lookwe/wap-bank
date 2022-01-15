@@ -3,19 +3,19 @@
     <van-popup
         v-model="isShow"
         @close="close"
+        closeable
         position="right"
         :style="{ width: '100%', height: '100%' }"
     >
         <div class="mod-edit-data">
             <div class="main header-bg">
                 <van-image
-                    @click="isShow = false"
                     round
                     width="4.5rem"
                     height="4.5rem"
                     src="https://img01.yzcdn.cn/vant/cat.jpeg"
                 />
-                <div class="user-form">
+                <div class="user-form mt20">
                     <div class="form-item required">
                         <p class="van-cell--required">昵称</p>
                         <div class="input-box">

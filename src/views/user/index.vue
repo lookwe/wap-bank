@@ -19,7 +19,7 @@ export default {
     },
     data() {
         return {
-            user_role: 2,
+            user_role: 1,
         };
     },
 };
