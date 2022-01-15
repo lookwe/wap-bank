@@ -4,7 +4,7 @@
             v-model="isShow"
             closeable
             position="bottom"
-            :style="{ height: '58%' }"
+            :style="{ height: '45%' }"
             @close="resetData"
         >
             <div class="mod-popup">

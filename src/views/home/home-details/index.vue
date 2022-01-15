@@ -78,16 +78,12 @@
                         <van-icon name="arrow-left" size="26" />
                         <div>返回</div>
                     </div>
-                    <div class="fn-item">
+                    <div class="fn-item" @click="toSharePage">
                         <van-icon name="share-o" size="26" />
                         <div>分享</div>
                     </div>
-                    <div class="fn-item">
-                        <van-icon
-                            name="chat-o"
-                            size="26"
-                            @click="onShowManager"
-                        />
+                    <div class="fn-item" @click="onShowManager">
+                        <van-icon name="chat-o" size="26" />
                         <div>客户经理</div>
                     </div>
                 </div>
@@ -104,8 +100,18 @@
             </div>
         </div>
 
-        <van-dialog v-model="showManagerDialig" show-cancel-button>
-            <img src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
+        <van-dialog
+            v-model="showManagerDialig"
+            confirmButtonText="好的"
+            confirmButtonColor="#11c564"
+        >
+            <div class="contact-manager">
+                <van-icon name="checked" size="80" color="#11c564" />
+                <p class="fz-16 fw-b">联系客户经理成功</p>
+                <p class="fz-12 txt-tips-color">
+                    稍后客户经理会添加您的微信给你联系
+                </p>
+            </div>
         </van-dialog>
         <applyInfo ref="applyInfo" />
     </div>
@@ -149,7 +155,15 @@ export default {
 
     methods: {
         onShowManager() {
+            // api ...
             this.showManagerDialig = true;
+        },
+
+        toSharePage() {
+            this.$router.push({
+                name: "homeShare",
+                params: {},
+            });
         },
     },
 };
@@ -235,6 +249,13 @@ export default {
             0 24px 32px 0 rgba(50.1, 50.1, 71.27, 0.08);
     }
 
+    .contact-manager {
+        background: #fff;
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
     .mod-bottom-fn {
         position: fixed;
         left: 0;
@@ -247,7 +268,7 @@ export default {
             .fn-item {
                 text-align: center;
                 &:not(:last-child) {
-                    margin-right: 16px;
+                    margin-right: 25px;
                 }
 
                 > div {

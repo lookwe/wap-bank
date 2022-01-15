@@ -4,7 +4,7 @@ const Main = () => import( /* webpackChunkName: 'Main' */ '@/views/main')
 // 首页模块
 const HomeDetails = () => import( /* webpackChunkName: 'HomeDetails' */ '@/views/home/home-details')
 const HomeMation = () => import( /* webpackChunkName: 'HomeMation' */ '@/views/home/home-mation')
-
+const homeShare = () => import( /* webpackChunkName: 'homeShare' */ '@/views/home/home-share')
 // ==== 用户模块 ====
 
 // -- 客户
@@ -38,6 +38,12 @@ const routes = [{
     path: '/home-mation',
     name: 'HomeMation',
     component: HomeMation
+},
+
+{
+    path: '/home-share',
+    name: 'homeShare',
+    component: homeShare
 },
 
 // 用户模块
