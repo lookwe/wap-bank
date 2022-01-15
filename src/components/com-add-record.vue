@@ -47,13 +47,13 @@ export default {
                     message: this.finallyMsg,
                     icon: "checked",
                 });
+            this.finallyMsg = null;
         },
 
         confirm() {
-            this.isShow = false;
             this.finallyMsg = "提交成功" || "服务出错";
-
             this.$emit("confirm", {});
+            this.isShow = false;
         },
     },
 };

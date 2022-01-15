@@ -58,9 +58,7 @@ export default {
     data() {
         return {
             isShow: false,
-            //传入的参数
             params: {},
-            //想传输的数据
             form: {
                 name: null,
                 tel: null,

@@ -70,12 +70,7 @@ export default {
         return {};
     },
     methods: {
-        onfetchPropCallback(option) {
-            console.log(option);
-        },
-
         onToPageDetail() {
-            // 判断是否我的客户
             this.$router.push({
                 name: "myClientDetail",
                 params: { id: "E123" },

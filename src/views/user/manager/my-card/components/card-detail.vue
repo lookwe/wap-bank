@@ -100,7 +100,7 @@ export default {
     data() {
         return {
             isShow: false,
-            //传入的参数
+            //
             params: {},
         };
     },
@@ -115,9 +115,7 @@ export default {
                 icon: "checked",
             });
             this.isShow = false;
-            this.$emit("confirm", {
-                ...this.form,
-            });
+            this.$emit("confirm", {});
         },
     },
 };

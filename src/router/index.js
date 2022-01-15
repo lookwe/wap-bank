@@ -7,14 +7,16 @@ const HomeMation = () => import( /* webpackChunkName: 'HomeMation' */ '@/views/h
 const homeShare = () => import( /* webpackChunkName: 'homeShare' */ '@/views/home/home-share')
 // ==== 用户模块 ====
 
-// -- 客户
-const myClientDetail = () => import( /* webpackChunkName: 'clientDetail' */ '@/views/user/manager/my-client/client-detail/index')
 
 // -- 经理
 const myCard = () => import( /* webpackChunkName: 'myCard' */ '@/views/user/manager/my-card')
 const myClient = () => import( /* webpackChunkName: 'myClient' */ '@/views/user/manager/my-client')
 const myPlan = () => import( /* webpackChunkName: 'myPlan' */ '@/views/user/manager/my-plan')
 const publicFetch = () => import( /* webpackChunkName: 'publicFetch' */ '@/views/user/manager/public-fetch')
+
+// -- 【我的客户、我的进件】详情页  ---> 其他简单详情由弹框实现
+const myClientDetail = () => import( /* webpackChunkName: 'clientDetail' */ '@/views/user/manager/my-client/client-detail')
+const myPlanDetail = () => import( /* webpackChunkName: 'myPlanDetail' */ '@/views/user/manager/my-plan/plan-detail')
 
 
 Vue.use(VueRouter)
@@ -71,6 +73,11 @@ const routes = [{
     path: '/my-client-detail',
     name: 'myClientDetail',
     component: myClientDetail
+},
+{
+    path: '/my-plan-detail',
+    name: 'myPlanDetail',
+    component: myPlanDetail
 },
 
 ]

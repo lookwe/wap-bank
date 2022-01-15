@@ -82,14 +82,7 @@
                 <div class="w100 flex jsb ac user">
                     <div class="fz-20 c-black name">姚成平</div>
                     <div class="flex ac status">
-                        <template v-if="index === 0">
-                            <div class="round-dot"></div>
-                            <div class="fz-15 c-black tag">已申请</div>
-                        </template>
-                        <template v-if="index === 1">
-                            <div class="round-dot green"></div>
-                            <div class="fz-15 c-black tag">已放款</div>
-                        </template>
+                        <com-state :type="2" />
                     </div>
                 </div>
                 <div class="fz-15 c-black flex ac tel">

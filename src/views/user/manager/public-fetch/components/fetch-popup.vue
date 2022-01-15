@@ -56,10 +56,7 @@ export default {
     data() {
         return {
             isShow: false,
-            //传入的参数
             params: {},
-            //想传输的数据
-            form: {},
         };
     },
     methods: {
@@ -73,9 +70,7 @@ export default {
                 icon: "checked",
             });
             this.isShow = false;
-            this.$emit("confirm", {
-                ...this.form,
-            });
+            this.$emit("confirm", {});
         },
     },
 };

@@ -19,11 +19,7 @@
 
             <div class="loan-item">
                 <div class="fz-17">
-                    <template v-if="loanInfo.type == 1"
-                        ><span class="round-dot"></span>申请中 </template
-                    ><template v-if="loanInfo.type == 2"
-                        ><span class="round-dot green"></span>已放款
-                    </template>
+                    <com-state :type="loanInfo.type" />
                 </div>
             </div>
 
@@ -74,7 +70,7 @@
                 </div>
             </div>
 
-            <div class="detail-ul fz-14 txt-tips-color">
+            <div class="detail-ul">
                 <div>
                     <span>申请日期：</span>
                     <span>2020/02/04</span>
@@ -154,23 +150,6 @@ export default {
     .client-detail {
         background: #f0f0f0;
         padding: 15px;
-    }
-
-    .detail-ul {
-        > div {
-            margin: 10px 0;
-        }
-    }
-
-    .track-progress {
-        margin-top: 10px;
-        .title {
-            font-size: 17px;
-            .sun-speed {
-                font-size: 16px;
-                color: #8e8e93;
-            }
-        }
     }
 }
 </style>

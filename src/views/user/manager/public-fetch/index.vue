@@ -86,5 +86,10 @@ export default {
 .mod-public-fetch {
     @import "../../style/index.less";
     overflow-y: auto;
+
+    .mod-public-fetch-card {
+        box-shadow: 0 16px 16px 0 rgba(50.1, 50.1, 71.27, 0.08),
+            0 24px 32px 0 rgba(50.1, 50.1, 71.27, 0.08);
+    }
 }
 </style>

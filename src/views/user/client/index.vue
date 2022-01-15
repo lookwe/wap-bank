@@ -46,13 +46,7 @@
                 @click="onShowLoanDateils"
             >
                 <div class="fw-b fz-17">
-                    <template v-if="item.type == 1"
-                        ><span class="round-dot"></span>申请中 </template
-                    ><template v-if="item.type == 2"
-                        ><span class="round-dot green"></span>已放款 </template
-                    ><template v-if="item.type == 3"
-                        ><span class="round-dot red"></span>已失败
-                    </template>
+                    <com-state :type="item.type" />
                 </div>
                 <div class="loan-item__user flex jsb">
                     <div>

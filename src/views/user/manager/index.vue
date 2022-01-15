@@ -139,6 +139,10 @@ export default {
                     margin: 0 10px;
                 }
             }
+
+            .ml20 {
+                font-size: 17px;
+            }
         }
     }
 }

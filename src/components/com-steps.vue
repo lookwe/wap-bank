@@ -124,7 +124,7 @@ export default {
     .stepe-item {
         box-sizing: border-box;
         margin-top: 16px;
-        padding: 10px 20px;
+        padding: 5px 20px;
 
         .stepe-name {
             font-size: 17px;
@@ -142,6 +142,7 @@ export default {
 
     // 穿透
 
+    // 步骤经过后面的
     /deep/.van-step--finish {
         color: #ff8300;
     }

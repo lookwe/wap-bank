@@ -25,17 +25,7 @@
                     <div class="fz-20 c-black name">姚成平</div>
                     <div class="loan-item">
                         <div class="fz-17">
-                            <template v-if="item == 1">
-                                <span class="round-dot"></span>申请中
-                            </template>
-
-                            <template v-if="item == 2"
-                                ><span class="round-dot green"></span>已放款
-                            </template>
-
-                            <template v-if="item == 3"
-                                ><span class="round-dot red"></span>审核中
-                            </template>
+                            <com-state :type="item" />
                         </div>
                     </div>
                 </div>
@@ -74,14 +64,10 @@ export default {
         return {};
     },
     methods: {
-        onfetchPropCallback(option) {
-            console.log(option);
-        },
-
         onToPageDetail() {
-            // 判断是否我的客户
+            console.log(1111);
             this.$router.push({
-                name: "myClientDetail",
+                name: "myPlanDetail",
                 params: { id: "E123" },
             });
         },
