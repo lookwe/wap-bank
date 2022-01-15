@@ -1,6 +1,6 @@
 <template>
     <!-- 用户类型 - 经理 -->
-    <div class="mod-user-manager u-page">
+    <div class="mod-user-manager u-page header-bg">
         <div class="user-header flex">
             <van-image
                 round

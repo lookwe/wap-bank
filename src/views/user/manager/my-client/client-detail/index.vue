@@ -221,23 +221,24 @@ export default {
             }
         }
     }
-}
 
-.part-content {
-    .title {
-        height: 22px;
-        line-height: 22px;
-        margin: 37px 0 0;
-    }
-
-    .client-detail {
-        padding: 16px 0;
-        border-bottom: 6px solid #f6f6f6;
-        &:nth-last-child(1) {
-            border-bottom: none;
+    // 进件列表
+    .part-content {
+        .title {
+            height: 22px;
+            line-height: 22px;
+            margin: 37px 0 0;
         }
-        .manager {
-            padding: 0 16px;
+
+        .client-detail {
+            padding: 16px 0;
+            border-bottom: 6px solid #f6f6f6;
+            &:nth-last-child(1) {
+                border-bottom: none;
+            }
+            .manager {
+                padding: 0 16px;
+            }
         }
     }
 }

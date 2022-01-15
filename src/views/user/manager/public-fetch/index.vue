@@ -23,11 +23,9 @@
                 <span class="tel">{{ item.tel }}</span>
             </div>
             <div class="card-pcs">
-                <span style="font-size: 11px; font-weight: 400">￥</span>
-                <span style="font-size: 20px; margin-top: -1px">{{
-                    item.pcs
-                }}</span>
-                <span style="font-size: 13px">次</span>
+                <span class="fz-11">￥</span>
+                <span class="fz-20">{{ item.pcs }}</span>
+                <span class="fz-13">次</span>
             </div>
             <div class="card-footer">
                 <div class="">流转次数</div>
@@ -42,8 +40,10 @@
 
 <script>
 import fetchProp from "@/views/user/manager/public-fetch/components/fetch-popup.vue";
+import bgMixin from "@/assets/js/mixin/bodyBgMixin";
 export default {
     name: "publicFetch",
+    mixins: [bgMixin],
     components: {
         fetchProp,
     },
@@ -56,23 +56,6 @@ export default {
                     issue: ["意向", "待跟进"],
                     pcs: 2,
                     active: 1,
-                    propupList: [
-                        {
-                            ygName: "切格瓦拉",
-                            detail: "打工是不可能打工的",
-                            time: "2021-10-01 10:00:00",
-                        },
-                        {
-                            ygName: "罗翔",
-                            detail: "罗翔说刑法；dsaasdsadsa",
-                            time: "2021-10-01 10:00:00",
-                        },
-                        {
-                            ygName: "张三",
-                            detail: "蒸胆剑；存慰展基助吭礁挂肤寻挠者虏芳譬钻翘她司蒸胆剑； 存慰展基助吭礁挂肤寻挠者虏芳譬钻翘她司",
-                            time: "2021-10-01 10:00:00",
-                        },
-                    ],
                 },
                 {
                     name: "姚大萨达",
@@ -80,23 +63,6 @@ export default {
                     issue: ["意向", "待跟进", "随便"],
                     pcs: 1,
                     active: 2,
-                    propupList: [
-                        {
-                            ygName: "切格瓦拉",
-                            detail: "打工是不可能打工的",
-                            time: "2021-10-01 10:00:00",
-                        },
-                        {
-                            ygName: "罗翔",
-                            detail: "罗翔说刑法；dsaasdsadsa",
-                            time: "2021-10-01 10:00:00",
-                        },
-                        {
-                            ygName: "张三",
-                            detail: "蒸胆剑；存慰展基助吭礁挂肤寻挠者虏芳譬钻翘她司蒸胆剑； 存慰展基助吭礁挂肤寻挠者虏芳譬钻翘她司",
-                            time: "2021-10-01 10:00:00",
-                        },
-                    ],
                 },
                 {
                     name: "姚为",
@@ -104,23 +70,6 @@ export default {
                     issue: ["待跟进"],
                     pcs: 2,
                     active: 0,
-                    propupList: [
-                        {
-                            ygName: "切格瓦拉",
-                            detail: "打工是不可能打工的",
-                            time: "2021-10-01 10:00:00",
-                        },
-                        {
-                            ygName: "罗翔",
-                            detail: "罗翔说刑法；dsaasdsadsa",
-                            time: "2021-10-01 10:00:00",
-                        },
-                        {
-                            ygName: "张三",
-                            detail: "蒸胆剑；存慰展基助吭礁挂肤寻挠者虏芳譬钻翘她司蒸胆剑； 存慰展基助吭礁挂肤寻挠者虏芳譬钻翘她司",
-                            time: "2021-10-01 10:00:00",
-                        },
-                    ],
                 },
             ],
         };
@@ -136,8 +85,6 @@ export default {
 <style scoped lang="less">
 .mod-public-fetch {
     @import "../../style/index.less";
-    background: #f6f6f6;
-    height: 100vh;
     overflow-y: auto;
 }
 </style>

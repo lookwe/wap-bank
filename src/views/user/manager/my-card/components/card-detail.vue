@@ -1,5 +1,5 @@
 <template>
-    <div class="fetch-prop">
+    <div class="card-detail">
         <van-popup
             v-model="isShow"
             closeable
@@ -30,6 +30,31 @@
                             </div>
                             <div class="fz-12 txt-tips-color">流转次数</div>
                         </div>
+
+                        <div class="flex f-d-c box-piece">
+                            <div class="">
+                                <span class="fz-26 fw-b">5</span>
+                                <span class="fz-12">天</span>
+                            </div>
+                            <div class="fz-12 txt-tips-color">持有天数</div>
+                        </div>
+                    </div>
+
+                    <div class="u-page bg-grey mt20">
+                        <div class="flex jsb">
+                            <div>
+                                <span class="fz-17 pr15">王志</span>
+                                <span class="fz-12 txt-tips-color"
+                                    >财务经理</span
+                                >
+                            </div>
+                            <div class="fz-15">
+                                <span class="round-dot green"></span>已放款
+                            </div>
+                        </div>
+                        <div class="fz-15 txt-tips-color mt15">
+                            深圳市腾讯科技有限公司
+                        </div>
                     </div>
 
                     <div class="li__divider mt20"></div>
@@ -39,25 +64,42 @@
             <!-- 跟进记录  -->
             <com-steps />
 
-            <div class="mod-footer-bnt">
-                <van-button round block type="primary" @click="confirm"
-                    >添加至我的名片</van-button
-                >
+            <div class="double-bnt">
+                <div class="bnt">
+                    <van-button
+                        block
+                        round
+                        type="primary"
+                        @click="$refs.comAddRecord.show()"
+                        >添加跟进记录</van-button
+                    >
+                </div>
+                <div class="bnt">
+                    <van-button
+                        plain
+                        round
+                        block
+                        type="primary"
+                        @click="$refs.comAddLabel.show()"
+                        >添加/修改标签</van-button
+                    >
+                </div>
             </div>
         </van-popup>
+
+        <com-add-label ref="comAddLabel" />
+        <com-add-record ref="comAddRecord" />
     </div>
 </template>
 
 <script>
 export default {
-    name: "fetchPopup",
+    name: "cardDetail",
     data() {
         return {
             isShow: false,
             //传入的参数
             params: {},
-            //想传输的数据
-            form: {},
         };
     },
     methods: {
@@ -80,7 +122,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.fetch-prop {
+.card-detail {
     .cardbox {
         padding: 0 15px;
     }

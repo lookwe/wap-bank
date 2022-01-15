@@ -2,8 +2,8 @@
     <div class="mod-my-card">
         <div class="mod-card-top">
             <div class="card-text1">999</div>
-            <div class="card-text2">我的名片</div>
-            <div class="addCard" @click="$refs.cardProp.show()">
+            <div class="card-text2 fz-16">我的名片</div>
+            <div class="addCard fz-13" @click="$refs.cardProp.show()">
                 <div>+</div>
                 <div>添加新名片</div>
             </div>
@@ -11,16 +11,15 @@
         <div class="cards">
             <div
                 class="mod-public-fetch-card"
-                v-for="item of list"
-                :key="item.name"
+                v-for="(item, index) of 3"
+                :key="index"
+                @click="toCardDetailPage"
             >
                 <div class="card-head">
-                    <div class="card-name">
-                        {{ item.name }}
-                    </div>
+                    <div class="card-name">姚成平</div>
                     <div
                         class="card-issue"
-                        v-for="iss of item.issue"
+                        v-for="iss of ['意向', '待跟进']"
                         :key="iss"
                     >
                         <span class="issue-txt">
@@ -30,130 +29,59 @@
                 </div>
                 <div class="card-tel">
                     <van-icon name="phone-o" />
-                    <span class="tel">{{ item.tel }}</span>
+                    <span class="tel">18113131212</span>
                 </div>
                 <div class="card-pcs">
-                    <span style="font-size: 11px; font-weight: 400">￥</span>
-                    <span style="font-size: 20px; margin-top: -1px">{{
-                        item.pcs
-                    }}</span>
-                    <span style="font-size: 13px">次</span>
-                    <span
-                        style="
-                            font-size: 20px;
-                            margin-top: -1px;
-                            margin-left: 60px;
-                        "
-                        >{{ item.pcs }}</span
-                    >
-                    <span style="font-size: 13px">天</span>
+                    <span class="fz-11">￥</span>
+                    <span class="fz-20"> 1 </span>
+                    <span class="fz-13">次</span>
+                    <!-- 剩余持有天数 -->
+                    <span class="fz-20"> 2</span>
+                    <span class="fz-13">天</span>
+                    <!-- xxx -->
                 </div>
                 <div class="card-footer">
                     <div>流转次数</div>
-                    <div style="margin-left: -112px">剩余持有</div>
+                    <div>剩余持有</div>
                     <div class="enter" @click="$refs.cardProp.show(item)">
                         &nbsp;>
                     </div>
                 </div>
             </div>
         </div>
-        <cardPropup ref="cardProp" @confirm="onfetchPropCallback"></cardPropup>
+
+        <!-- 添加名片 -->
+        <cardPropup ref="cardProp" @confirm="onfetchPropCallback" />
+        <cardDetail ref="cardDetail" />
     </div>
 </template>
 <script>
-import cardPropup from "@/views/user/manager/my-card/components/card-propup.vue";
+import cardPropup from "@/views/user/manager/my-card/components/add-card";
+import cardDetail from "@/views/user/manager/my-card/components/card-detail";
+import bgMixin from "@/assets/js/mixin/bodyBgMixin";
 export default {
     name: "myCard",
+    mixins: [bgMixin],
     components: {
         cardPropup,
+        cardDetail,
     },
     data() {
-        return {
-            list: [
-                {
-                    name: "姚成平",
-                    tel: "18736463012",
-                    issue: ["意向", "待跟进"],
-                    pcs: 2,
-                    active: 1,
-                    propupList: [
-                        {
-                            ygName: "切格瓦拉",
-                            detail: "打工是不可能打工的",
-                            time: "2021-10-01 10:00:00",
-                        },
-                        {
-                            ygName: "罗翔",
-                            detail: "罗翔说刑法；dsaasdsadsa",
-                            time: "2021-10-01 10:00:00",
-                        },
-                        {
-                            ygName: "张三",
-                            detail: "蒸胆剑；存慰展基助吭礁挂肤寻挠者虏芳譬钻翘她司蒸胆剑； 存慰展基助吭礁挂肤寻挠者虏芳譬钻翘她司",
-                            time: "2021-10-01 10:00:00",
-                        },
-                    ],
-                },
-                {
-                    name: "姚大萨达",
-                    tel: "1877777772",
-                    issue: ["意向", "待跟进", "随便"],
-                    pcs: 1,
-                    active: 2,
-                    propupList: [
-                        {
-                            ygName: "切格瓦拉",
-                            detail: "打工是不可能打工的",
-                            time: "2021-10-01 10:00:00",
-                        },
-                        {
-                            ygName: "罗翔",
-                            detail: "罗翔说刑法；dsaasdsadsa",
-                            time: "2021-10-01 10:00:00",
-                        },
-                        {
-                            ygName: "张三",
-                            detail: "蒸胆剑；存慰展基助吭礁挂肤寻挠者虏芳譬钻翘她司蒸胆剑； 存慰展基助吭礁挂肤寻挠者虏芳譬钻翘她司",
-                            time: "2021-10-01 10:00:00",
-                        },
-                    ],
-                },
-                {
-                    name: "姚为",
-                    tel: "18736123456",
-                    issue: ["待跟进"],
-                    pcs: 2,
-                    active: 0,
-                    propupList: [
-                        {
-                            ygName: "切格瓦拉",
-                            detail: "打工是不可能打工的",
-                            time: "2021-10-01 10:00:00",
-                        },
-                        {
-                            ygName: "罗翔",
-                            detail: "罗翔说刑法；dsaasdsadsa",
-                            time: "2021-10-01 10:00:00",
-                        },
-                        {
-                            ygName: "张三",
-                            detail: "蒸胆剑；存慰展基助吭礁挂肤寻挠者虏芳譬钻翘她司蒸胆剑； 存慰展基助吭礁挂肤寻挠者虏芳譬钻翘她司",
-                            time: "2021-10-01 10:00:00",
-                        },
-                    ],
-                },
-            ],
-        };
+        return {};
     },
     methods: {
         onfetchPropCallback(option) {
             console.log(option);
         },
+
+        toCardDetailPage() {
+            this.$refs.cardDetail.show();
+        },
     },
 };
 </script>
  
-<style lang="less" scoped>
+<style lang="less">
 @import "../../style/index.less";
 .mod-my-card {
     position: relative;
@@ -178,7 +106,6 @@ export default {
             height: 22px;
             opacity: 0.9000000357627869;
             color: rgba(255, 255, 255, 0.9);
-            font-size: 16px;
             font-weight: 400;
             font-family: "SF Pro Text";
             text-align: left;
@@ -189,7 +116,7 @@ export default {
         .addCard {
             display: flex;
             align-items: center;
-            width: 111px;
+            padding-right: 10px;
             height: 32px;
             border-radius: 34px;
             background: rgba(255, 255, 255, 1);
@@ -201,7 +128,6 @@ export default {
                 height: 22px;
                 opacity: 1;
                 color: rgba(255, 131, 0, 1);
-                font-size: 13px;
                 font-weight: 500;
                 font-family: "SF Pro Text";
                 text-align: left;
@@ -217,8 +143,25 @@ export default {
         }
     }
     .cards {
-        width: 100vw;
         margin-top: -88px;
+        padding: 15px;
+        .mod-public-fetch-card {
+            .card-pcs {
+                > span:nth-child(1) {
+                    font-weight: 400;
+                }
+                // 剩余持有天数
+                > span:nth-child(4) {
+                    margin-left: 50px;
+                }
+            }
+            .card-footer {
+                // 剩余持有
+                div:nth-child(2) {
+                    margin-left: -112px;
+                }
+            }
+        }
     }
 }
 </style>

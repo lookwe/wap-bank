@@ -19,7 +19,16 @@
     text-overflow: ellipsis;
 }
 
-.Loop(@index) when(@index <=6) {
+// .u-line-3 {
+//     display: -webkit-box !important;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     word-break: break-all;
+//     -webkit-line-clamp: 3;
+//     -webkit-box-orient: vertical !important;
+// }
+
+.LoopLine(@index) when (@index <=6) {
     .u-line-@{index} {
         display: -webkit-box !important;
         overflow: hidden;
@@ -28,9 +37,11 @@
         -webkit-line-clamp: @index;
         -webkit-box-orient: vertical !important;
     }
+
+    .LoopLine(@index+1);
 }
 
-.Loop(2);
+.LoopLine(2);
 
 // 粗体
 .fw-b {
