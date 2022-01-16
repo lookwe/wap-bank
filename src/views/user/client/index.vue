@@ -29,7 +29,7 @@
                         round
                         block
                         type="primary"
-                        @click="$refs.editData.show()"
+                        @click="toUserEditPage"
                         >编辑资料</van-button
                     >
                 </div>
@@ -43,7 +43,7 @@
                 class="loan-item"
                 v-for="(item, index) in loanList"
                 :key="index"
-                @click="onShowLoanDateils"
+                @click="toLoanDateilsPage"
             >
                 <div class="fw-b fz-17">
                     <com-state :type="item.type" />
@@ -63,21 +63,16 @@
         </div>
 
         <!-- 组件 -->
-        <loanDetails ref="loanDetails" />
-        <editData ref="editData" />
+
         <contactManager ref="contactManager" />
     </div>
 </template>
 
 <script>
-import loanDetails from "./loan-details";
-import editData from "@/views/user/client/components/edit-data";
 import contactManager from "@/views/user/client/components/contact-manager";
 export default {
     name: "client",
     components: {
-        loanDetails,
-        editData,
         contactManager,
     },
     data() {
@@ -107,8 +102,18 @@ export default {
             this.$refs.contactManager.show();
         },
 
-        onShowLoanDateils() {
-            this.$refs.loanDetails.show();
+        toLoanDateilsPage() {
+            this.$router.push({
+                name: "myloanDetails",
+                params: { id: "E123" },
+            });
+        },
+
+        toUserEditPage() {
+            this.$router.push({
+                name: "userEdit",
+                params: { id: "E123" },
+            });
         },
     },
 };

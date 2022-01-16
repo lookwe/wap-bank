@@ -2,7 +2,7 @@
     <!-- 贷款详情 -->
     <van-popup
         v-model="isShow"
-        @close="close"
+        @closed="closeBack"
         closeable
         position="right"
         :style="{ width: '100%', height: '100%' }"
@@ -93,15 +93,25 @@ export default {
             userNameErrorMsg: "",
         };
     },
+    computed: {
+        isRouteMode() {
+            return this.$route.name === "userEdit";
+        },
+    },
+    mounted() {
+        // 提供【组件式 & 路由方式】开启
+        if (this.isRouteMode) {
+            this.show();
+        }
+    },
     methods: {
         show() {
             this.isShow = true;
-            console.log(this.form.userName);
         },
 
-        close() {
+        closeBack() {
+            this.$router.go(-1);
             this.onReset();
-            this.isShow = false;
         },
 
         onReset() {
@@ -123,11 +133,15 @@ export default {
             }
             this.$toast("修改成功！");
 
-            setTimeout(() => {
-                // 异步模拟 ajax....
+            new Promise((resolve) => {
+                setTimeout(() => {
+                    // 异步模拟 ajax....
+                    resolve();
 
-                this.close();
-            }, 500);
+                    this.isShow = true;
+                    this.closeBack();
+                }, 500);
+            });
         },
     },
 };

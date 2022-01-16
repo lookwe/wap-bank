@@ -10,7 +10,6 @@
                 <h3>招商银行富税贷</h3>
                 <van-image
                     round
-                    @click="isShow = false"
                     width="30px"
                     height="30px"
                     src="https://img01.yzcdn.cn/vant/cat.jpeg"
@@ -133,14 +132,20 @@ export default {
             ],
         };
     },
+    mounted() {
+        if (this.$route.name === "myloanDetails") {
+            this.show();
+        }
+    },
     methods: {
+        // 提供【组件式 & 路由方式】开启
         show() {
             this.isShow = true;
         },
     },
 };
 </script>
- 
+
 <style scoped lang="less">
 .mod-loan-details {
     .loan-item {

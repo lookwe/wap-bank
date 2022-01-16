@@ -6,7 +6,8 @@ const HomeDetails = () => import( /* webpackChunkName: 'HomeDetails' */ '@/views
 const HomeMation = () => import( /* webpackChunkName: 'HomeMation' */ '@/views/home/home-mation')
 const homeShare = () => import( /* webpackChunkName: 'homeShare' */ '@/views/home/home-share')
 // ==== 用户模块 ====
-
+const myloanDetails = () => import( /* webpackChunkName: 'myloanDetails' */ '@/views/user/client/loan-details')
+const userEdit = () => import( /* webpackChunkName: 'myloanDetails' */ '@/views/user/client/components/edit-data')
 
 // -- 经理
 const myCard = () => import( /* webpackChunkName: 'myCard' */ '@/views/user/manager/my-card')
@@ -78,6 +79,16 @@ const routes = [{
     path: '/my-plan-detail',
     name: 'myPlanDetail',
     component: myPlanDetail
+},
+{
+    path: '/my-loan-details',
+    name: 'myloanDetails',
+    component: myloanDetails
+},
+{
+    path: '/user-edit',
+    name: 'userEdit',
+    component: userEdit
 },
 
 ]
