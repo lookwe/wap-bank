@@ -15,11 +15,11 @@
                     class="header-cell"
                     v-for="(item, index) in cellList"
                     :key="index"
+                    @click="activeIndex = index"
                 >
                     <div
                         v-if="index !== cellList.length - 1"
                         class="cell-item flex jsb u-page"
-                        @click="activeIndex = index"
                     >
                         <div>{{ item.name }}</div>
                         <van-icon
@@ -88,6 +88,10 @@ export default {
         },
 
         confirm() {
+            this.$toast({
+                message: "修改成功",
+                icon: "checked",
+            });
             this.isShow = false;
             this.$emit("confirm", {});
         },

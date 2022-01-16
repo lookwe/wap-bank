@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="share-fn-box flex jsb">
+        <div class="share-fn-box flex">
             <div class="fn-item" @click="$router.go(-1)">
                 <van-icon name="arrow-left" size="26" />
                 <div>返回上一页</div>
@@ -70,7 +70,8 @@ export default {
 
     mounted() {
         // js判断 双三角形
-        const shareWidth = document.querySelector(".share-box").clientWidth;
+        const shareWidth =
+            document.querySelector(".share-box").clientWidth + 0.5;
         console.log("宽度：", shareWidth);
 
         const triangle__left = document.querySelector(".triangle__left");
@@ -162,12 +163,13 @@ export default {
     }
 
     .share-fn-box {
-        padding: 15px;
+        padding: 15px 0;
         margin-top: 20px;
         position: relative;
 
         .fn-item {
             text-align: center;
+            flex: 1;
 
             > div {
                 font-size: 15px;

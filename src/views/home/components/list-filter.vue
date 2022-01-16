@@ -4,7 +4,7 @@
             v-model="isShow"
             closeable
             position="bottom"
-            :style="{ height: '60%' }"
+            :style="{ height: '68%' }"
         >
             <div class="mod-popup">
                 <div class="mod-popup__header">列表筛选</div>
@@ -54,7 +54,7 @@
                                     bar-height="6px"
                                     active-color="#FF8300"
                                 >
-                                    <template v-slot:left-button="value">
+                                    <template v-slot:left-button="{ value }">
                                         <div class="custom-button bg-p">
                                             <span class="span-value">{{
                                                 value
@@ -62,7 +62,7 @@
                                         </div>
                                     </template>
 
-                                    <template v-slot:right-button="value">
+                                    <template v-slot:right-button="{ value }">
                                         <div class="custom-button bg-p">
                                             <span class="span-value">{{
                                                 value
@@ -74,7 +74,7 @@
                         </div>
                     </div>
 
-                    <div class="filter-item">
+                    <div class="filter-item mt20">
                         <div class="filter-item__title fz-17 txt-tips-color">
                             贷款利率(%)
                         </div>
@@ -87,7 +87,7 @@
                                     bar-height="6px"
                                     active-color="#FF8300"
                                 >
-                                    <template v-slot:left-button="value">
+                                    <template v-slot:left-button="{ value }">
                                         <div class="custom-button bg-p">
                                             <span class="span-value">{{
                                                 value
@@ -95,7 +95,7 @@
                                         </div>
                                     </template>
 
-                                    <template v-slot:right-button="value">
+                                    <template v-slot:right-button="{ value }">
                                         <div class="custom-button bg-p">
                                             <span class="span-value">{{
                                                 value
@@ -190,6 +190,7 @@ export default {
 
             .box-slider {
                 width: 50%;
+                padding-bottom: 30px;
                 .custom-button {
                     width: 20px;
                     height: 20px;
@@ -198,7 +199,7 @@ export default {
 
                     .span-value {
                         position: absolute;
-                        top: 10px;
+                        top: 25px;
                         left: 0;
                     }
                 }
@@ -211,7 +212,7 @@ export default {
         margin-bottom: 30px;
         justify-content: space-around;
         .bnt {
-            width: 40%;
+            width: 45%;
             height: 40px;
         }
     }
